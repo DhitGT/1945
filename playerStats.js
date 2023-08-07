@@ -1,8 +1,26 @@
 let money = parseInt(btoa(getCookie("money")))
 let playerWeapon = {
-    "magMax":"10",
-    "reloadDelay" : "1000",
-    "rateOfFire" : "300"
+    "magMax":{
+        "0" : 10,
+        "1" : 15,
+        "2" : 20,
+        "3" : 25,
+        "4" : 40,
+    },
+    "reloadDelay" : {
+        "0" : "1500",
+        "1" : "1250",
+        "2" : "1000",
+        "3" : "700",
+        "4" : "300",
+    },
+    "rateOfFire" : {
+        "0" : "300",
+        "1" : "250",
+        "2" : "200",
+        "3" : "150",
+        "4" : "100",
+    }
 }
 
 let playerStats = {

@@ -3,7 +3,6 @@ class Player {
     this.targetKill = GameLevel.targetKills
     this.kill = 0;
     this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue]
-    this.rateOfFire = playerWeapon.rateOfFire;
     this.x = x;
     this.y = y;
     this.w = w;
@@ -24,9 +23,10 @@ class Player {
     this.fire = false;
     this.colldown = false;
     this.isReload = false;
-    this.mag = playerWeapon.magMax;
-    this.magMax = playerWeapon.magMax;
-    this.reloadDelay = playerWeapon.reloadDelay;
+    this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];;
+    this.mag = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
+    this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];;
+    this.reloadDelay = playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];;
     addEventListener("keydown", (event) => {
       const key = event.key.toLowerCase();
       switch (key) {
@@ -97,7 +97,6 @@ class Player {
     this.targetKill = GameLevel.targetKills
     this.kill = 0;
     this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue]
-    this.rateOfFire = playerWeapon.rateOfFire;
     this.Xcenter = this.x
     this.Ycenter = this.y 
     this.speed = playerStats.speed[ShopBtn.playerSpeed.upgradeValue];
@@ -114,9 +113,10 @@ class Player {
     this.fire = false;
     this.colldown = false;
     this.isReload = false;
-    this.mag = playerWeapon.magMax;
-    this.magMax = playerWeapon.magMax;
-    this.reloadDelay = playerWeapon.reloadDelay;
+    this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];;
+    this.mag = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
+    this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];;
+    this.reloadDelay = playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];;
   }
 
 
