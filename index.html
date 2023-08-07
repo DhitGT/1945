@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>War</title>
+    <title>Game</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
-
         </div>
         <div class="main">
             <div class="text-area" style="color: wheat;">
@@ -20,18 +19,31 @@
                 <p id="msglevel"></p>
                 <p id="msgtargetkills"></p>
             </div>
-            <canvas id="canvas"></canvas>
+                <div class="startpage">
+                    <div class="selectlevel">
+                        <label for="level">Select Level</label>
+                        <select name="level" id="levelselector">
+                            <option value="1">1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button id="startbtn" onclick="startingGame()">START</button>
+                    <a href="shop.html">
+
+                        <button>SHOP</button>
+                    </a>
+                </div>
             <div class="input-area">
-                <button id="startbtn">PLAYING</button>
-                <button id="restartbtn">RESTART</button>
             </div>
         </div>
 
         </div>
     </div>
-    <script src="playerStats.js"></script>
-    <script src="class.js"></script>
-    <script src="decralation.js"></script>
+    <script src="coockie.js"></script>
+    <script src="shop.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

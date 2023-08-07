@@ -2,7 +2,7 @@ class Player {
   constructor(x, y, w, h, speed, color) {
     this.targetKill = GameLevel.targetKills
     this.kill = 0;
-    this.hp = playerStats.hp
+    this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue]
     this.rateOfFire = playerWeapon.rateOfFire;
     this.x = x;
     this.y = y;
@@ -12,7 +12,7 @@ class Player {
     this.Xcenter = this.x
     this.Ycenter = this.y 
     this.color = color;
-    this.speed = playerStats.speed;
+    this.speed = playerStats.speed[ShopBtn.playerSpeed.upgradeValue];
     this.u = false;
     this.d = false;
     this.r = false;
@@ -93,9 +93,48 @@ class Player {
     });
   }
 
+  refresh(){
+    this.targetKill = GameLevel.targetKills
+    this.kill = 0;
+    this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue]
+    this.rateOfFire = playerWeapon.rateOfFire;
+    this.Xcenter = this.x
+    this.Ycenter = this.y 
+    this.speed = playerStats.speed[ShopBtn.playerSpeed.upgradeValue];
+    this.x = 200;
+    this.y = 300;
+    this.u = false;
+    this.d = false;
+    this.r = false;
+    this.l = false;
+    this.au = false;
+    this.ad = false;
+    this.ar = false;
+    this.al = false;
+    this.fire = false;
+    this.colldown = false;
+    this.isReload = false;
+    this.mag = playerWeapon.magMax;
+    this.magMax = playerWeapon.magMax;
+    this.reloadDelay = playerWeapon.reloadDelay;
+  }
+
 
   update() {
     if(this.hp >= 1){
+
+      coins.forEach(c =>{
+        if(isCollide(c,player)){
+          money += c.amount
+          console.log(money)
+          coins.splice(c,1)
+          setCookie("money",atob(money),9)
+        }
+      })
+
+      if(this.kill === this.targetKill){
+        this.win()
+      }
       msgHp.innerHTML = "Hp : "+this.hp
       if(this.mag < 1){
         this.reload()
@@ -106,6 +145,7 @@ class Player {
       }
     }else{
       this.gameover()
+      restartBtn.innerHTML = "RESTART"
     }
   }
 
@@ -155,6 +195,13 @@ class Player {
     pause = true
     start()
     msgHp.innerHTML = " GAME OVER"
+  }
+
+  win(){
+    pause = true;
+    win = true;
+    start();
+    restartBtn.innerHTML = "next level"
   }
 }
 
@@ -220,6 +267,7 @@ class Enemy {
             msg.innerHTML = " ";
             canvasMsgTxt = '';
             enemys.splice(e, 1);
+            coins.push(new Coin(e.x,e.y))
             player.kill++
           }
           bullets.splice(b, 1);
@@ -235,4 +283,26 @@ class Enemy {
     c.fillStyle = this.color;
     c.fillRect(this.x, this.y, this.s, this.s);
   }
+}
+
+class Coin{
+  constructor(x,y){
+    this.x = x
+    this.y = y
+    this.rad = 5
+    this.sz = this.rad
+    this.amount = 500;
+    this.color = "yellow"
+
+  }
+
+
+  draw(c){
+    c.fillStyle = this.color;
+    c.beginPath();
+    c.arc(this.x, this.y, this.rad, 0, Math.PI * 2);
+    c.fill();
+    c.closePath();
+  }
+
 }

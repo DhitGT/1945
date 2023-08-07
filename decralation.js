@@ -5,10 +5,13 @@ const msgMag = document.getElementById("magazine");
 const msgHp = document.getElementById("playerhp");
 const msgLvl = document.getElementById("msglevel");
 const msgTarget = document.getElementById("msgtargetkills");
+const restartBtn = document.getElementById("restartbtn")
 let canvasMsgTxt = ''
 bgImg.src = "bg.png";
-const bullets = [];
-const enemys = [];
+let bullets = [];
+let enemys = [];
+let coins = [];
+
 
 function drawImage(img) {
   c.drawImage(img, 0, 0, CW, CH);

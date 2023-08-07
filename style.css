@@ -19,6 +19,27 @@ body{
     /* border: 2px red solid; */
 }
 
+.startpage{
+    background-image: url('bg.png');
+    background-size: cover;
+    margin: auto;
+    border: 2px solid wheat;
+    width: 800px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+td{
+    border: 2px solid wheat;
+}
+
+.startpage button, .selectlevel, a{
+    margin:0.5rem auto;
+    width: 50%;
+}
+
 .input-area,.text-area{
     margin: auto;
     width: 50%;

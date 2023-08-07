@@ -5,25 +5,49 @@ const CH = 400;
 canvas.width = CW;
 canvas.height = CH;
 let pause = false;
+let win = false;
 let gameover = false;
 let gloop;
 let spawner;
+function startingGame(){
+    const levelSector = document.getElementById("levelselector")
+    if(!getCookie('levelselected')){
+      setCookie('levelselected',levelSector.value,1)
+    }else{
+      
+    }
+    const newPageURL = "game.html";
+    window.location.href = newPageURL;
 
+}
 start();
+
 document.getElementById("startbtn").addEventListener("click", () => {
-  pause = !pause;
-  if (pause) {
-    document.getElementById("startbtn").innerHTML = "PAUSED";
-  } else {
-    document.getElementById("startbtn").innerHTML = "PLAYING";
-  }
-  start();
+  document.location.href = "index.html"
 });
-document.getElementById("restartbtn").addEventListener("click", () => {
+
+restartBtn.addEventListener("click", () => {
   if (gameover) {
-    gameover = false;
+      bullets = []
+      enemys = []
     pause = false;
+    gameover = false;
     player.hp = playerStats.hp;
+    player.refresh();
+    start();
+  }
+  if (win) {
+    pause = false;
+    win = false;
+    bullets = []
+    enemys = []
+    if(levelIndex  <= 5 ){
+        levelIndex++;
+    }
+    setCookie('levelselected',levelIndex,1)
+    GameLevel = worldSetting[levelIndex];
+    player.refresh();
+    restartBtn.innerHTML = " "
     start();
   }
 });
@@ -43,7 +67,8 @@ function handleVisibilityChange() {
 
 function update() {
   msgLvl.innerHTML = GameLevel.name;
-  msgTarget.innerHTML = "Kill Goals : " + player.targetKill +" / "+ player.kill 
+  msgTarget.innerHTML =
+    "Kill Goals : " + player.targetKill + " / " + player.kill;
   player.movement();
   player.update();
   if (!player.isReload) {
@@ -51,10 +76,10 @@ function update() {
   }
   objDestroy(bullets);
   objUpdate(bullets);
-  console.log(enemys);
   enemyDestroy(enemys);
   objUpdate(enemys);
 }
+
 
 function draw() {
   c.clearRect(0, 0, CH, CW);
@@ -63,6 +88,7 @@ function draw() {
   player.draw(c);
   objDraw(bullets);
   objDraw(enemys);
+  objDraw(coins);
 }
 
 function gameloop() {
@@ -71,7 +97,14 @@ function gameloop() {
 }
 
 function start() {
-  if (!pause || !gameover) {
+    let thislevel = getCookie('levelselected')
+    levelIndex = thislevel
+    GameLevel = worldSetting[levelIndex]
+    console.log("level" + levelIndex,thislevel)
+    player.refresh()
+    console.log(levelIndex);
+  if (!pause) {
+    console.log(levelIndex);
     gloop = setInterval(gameloop, 1000 / 30);
     spawner = setInterval(enemySpawner, GameLevel.EnemySpawnRate);
   } else {
