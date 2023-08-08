@@ -90,8 +90,12 @@ function ts() {
 
 function ButtonShopClicked(ShopBtn) {
     if(ShopBtn.upgradeValue <ShopBtn.upgradeMaxValue){
+      if(money > ShopBtn.price[ShopBtn.upgradeValue]){
+        money -= ShopBtn.price[ShopBtn.upgradeValue]
+        setCookie("money",atob(money),99)
         ShopBtn.upgradeValue++
         ShopBtn.labelValue = ShopBtn.upgradeValue + "/" + ShopBtn.upgradeMaxValue
+      }
     }
     RefreshBtnShop(ShopBtn)
   }
@@ -102,4 +106,5 @@ function ButtonShopClicked(ShopBtn) {
         ShopBtn.btn.innerHTML = "MAX"
     }
     setCookie(ShopBtn.btnName,btoa(ShopBtn.upgradeValue),9)
+    document.getElementById("moneyspan").innerHTML = parseInt(btoa(getCookie("money")))
   }

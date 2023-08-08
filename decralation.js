@@ -59,7 +59,7 @@ function playerShoot() {
           player.ad,
           player.al,
           player.ar,
-        ])
+        ],player)
         );
       }
     }

@@ -23,10 +23,11 @@ class Player {
     this.fire = false;
     this.colldown = false;
     this.isReload = false;
-    this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];;
+    this.damage = playerWeapon.WpDamage[ShopBtn.WpDamage.upgradeValue];
+    this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];
     this.mag = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
-    this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];;
-    this.reloadDelay = playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];;
+    this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
+    this.reloadDelay = playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];
     addEventListener("keydown", (event) => {
       const key = event.key.toLowerCase();
       switch (key) {
@@ -71,6 +72,11 @@ class Player {
         case "d":
           this.r = false;
           break;
+        case "r":
+          if(!this.isReload){
+            this.reload()
+          }
+          break;
         case "arrowup":
           this.au = false;
           break;
@@ -113,6 +119,7 @@ class Player {
     this.fire = false;
     this.colldown = false;
     this.isReload = false;
+    this.damage = playerWeapon.WpDamage[ShopBtn.WpDamage.upgradeValue];
     this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];;
     this.mag = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
     this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];;
@@ -136,10 +143,11 @@ class Player {
         this.win()
       }
       msgHp.innerHTML = "Hp : "+this.hp
-      if(this.mag < 1){
-        this.reload()
-        this.isReload = true
-        msgMag.innerHTML ="ammo : "+ this.magMax+" / reload " 
+      if(this.mag <= 1 && !this.isReload){
+        msgMag.innerHTML ="ammo : EMPTY!!! (Press R to Reload)"
+        
+      }else if(this.isReload){
+        msgMag.innerHTML ="ammo : "+ this.magMax+" / reload (" + playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue]/1000 + "s)"
       }else{
         msgMag.innerHTML ="ammo : "+ this.magMax+" / " +  this.mag
       }
@@ -173,10 +181,13 @@ class Player {
   }
 
   reload(){
-    setTimeout(()=>{
-        this.mag = this.magMax
-        this.isReload = false
-      },this.reloadDelay)
+    this.isReload = true
+    if(this.isReload){
+      setTimeout(()=>{
+          this.mag = this.magMax
+          this.isReload = false
+        },this.reloadDelay)
+    }
 
   }
 
@@ -206,13 +217,14 @@ class Player {
 }
 
 class Bullet {
-  constructor(x, y, radius, speed, angle) {
+  constructor(x, y, radius, speed, angle,player) {
     this.x = x;
     this.y = y;
     this.sz = radius;
     this.angle = angle;
     this.radius = radius;
     this.speed = speed;
+    this.damage = player.damage;
   }
 
   update() {
@@ -260,7 +272,7 @@ class Enemy {
     bullets.forEach((b) => {
       enemys.forEach((e) => {
         if (isCollide(b, e)) {
-          this.hp -= 1;
+          this.hp -= b.damage
           canvasMsgTxt = "Hp "+GameLevel.enemyHp+" / " + this.hp;
           msg.innerHTML = "Hp "+GameLevel.enemyHp+" / " + this.hp;
           if (this.hp <= 0) {
