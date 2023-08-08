@@ -56,3 +56,64 @@ canvas{
     margin: auto;
     border: 2px wheat solid;
 }
+
+@media only screen and (max-width: 767px){
+    body, .container{
+        overflow:hidden ;
+    }
+    /* .main{
+        height: 110vh;
+        transform: translateY(100px);
+    }
+    body{
+        zoom: 70%;
+        font-size: 15px;
+    }
+    .input-area,.text-area{
+        border: 2px solid rgb(0, 238, 255);
+    }
+
+
+    .analog{
+        display: flex;
+        width: 100vh;
+        justify-content: space-between;
+    }
+
+    .move-analog{
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+        position: fixed;
+        left: 10%;
+        top: 70%;
+    }
+    .weapon-analog{
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+        position: fixed;
+        right: 10%;
+        top: 70%;
+    }
+
+
+    
+
+    .analog button{
+        border-radius: 10px;
+        opacity: 0.5;
+        width: 50px;
+        height: 50px;
+    } */
+
+    .blocker{
+        width: 100vh;
+        height: 100vh;
+        background-color: #010409;
+        position: fixed;
+        top: 0;
+        left:0;
+        color: aliceblue;
+    }
+}
