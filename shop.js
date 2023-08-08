@@ -1,153 +1,105 @@
-ShopBtn = {
-    "playerHp" : {
-        "btnName" : "playerHp",
-        "btn" : document.getElementById("php"), 
-        "label" : document.getElementById("jphp"),
-        "labelValue" : "0/4",
-        "price" : {
-            "0" : 200,
-            "1" : 500,
-            "2" : 1000,
-            "3" : 1500,
-            "4" : 2500,
-        },
-        "upgradeMaxValue" : 4,
-        "upgradeValue" : 0
-    },
-    "playerSpeed" : {
-        "btnName" : "playerSpeed",
-        "btn" : document.getElementById("speed"), 
-        "label" : document.getElementById("jpspeed") ,
-        "labelValue" : "0/4",
-        "price" : {
-            "0" : 200,
-            "1" : 500,
-            "2" : 1000,
-            "3" : 1500,
-            "4" : 2500,
-        },
-        "upgradeMaxValue" : 4,
-        "upgradeValue" : 0
-    },
-    "WpDamage" : {
-        "btnName" : "WpDamage",
-        "btn" : document.getElementById("wdmg"), 
-        "label" : document.getElementById("jwdmg") ,
-        "labelValue" : "0/4",
-        "price" : {
-            "0" : 200,
-            "1" : 500,
-            "2" : 1000,
-            "3" : 1500,
-            "4" : 2500,
-        },
-        "upgradeMaxValue" : 4,
-        "upgradeValue" : 0
-    },
-    "WpRateOfFire" : {
-        "btnName" : "WpRateOfFire",
-        "btn" : document.getElementById("wrof"), 
-        "label" : document.getElementById("jwrof") ,
-        "labelValue" : "0/4",
-        "price" : {
-            "0" : 200,
-            "1" : 500,
-            "2" : 1000,
-            "3" : 1500,
-            "4" : 2500,
-        },
-        "upgradeMaxValue" : 4,
-        "upgradeValue" : 0
-    },
-    "WpMaxMag" : {
-        "btnName" : "WpMaxMag",
-        "btn" : document.getElementById("wmm"), 
-        "label" : document.getElementById("jwmm") ,
-        "labelValue" : "0/4",
-        "price" : {
-            "0" : 200,
-            "1" : 500,
-            "2" : 1000,
-            "3" : 1500,
-            "4" : 2500,
-        },
-        "upgradeMaxValue" : 4,
-        "upgradeValue" : 0
-    },
-    "WpReloadSpeed" : {
-        "btnName" : "WpReloadSpeed",
-        "btn" : document.getElementById("wrs"), 
-        "label" : document.getElementById("jwrs") ,
-        "labelValue" : "0/4",
-        "price" : {
-            "0" : 200,
-            "1" : 500,
-            "2" : 1000,
-            "3" : 1500,
-            "4" : 2500,
-        },
-        "upgradeMaxValue" : 4,
-        "upgradeValue" : 0
-    }
+function startingGame(){
+  setCookie('levelselected',document.getElementById("levelselector").value,99)
+  window.location.href = "game.html";
 }
-function updateLabelBtn(ShopBtn){
+
+CheckCookies(ShopBtn);
+function CheckCookies(ShopBtn) {
+  let ShopBtnArr = Object.values(ShopBtn);
+  ShopBtnArr.forEach((e) => {
+    if (getCookie(e.btnName)) {
+      AplyAllCoockies(ShopBtn)
+      console.log("ada kookie",e.btnName, " ", e.upgradeValue, document.title);
+    } else {
+      console.log("gada kookie", e.btnName);
+      CreateAllCookie(ShopBtn);
+      AplyAllCoockies(ShopBtn)
+    }
+  });
+  RefreshAllBtnShop(ShopBtn)
+  if(document.title == "Game"){
+
+    document.getElementById("moneyspanhome").innerHTML = parseInt(
+      btoa(getCookie("money"))
+    );
+}
 
 }
-function ButtonShopClicked(ShopBtn){
+function AplyAllCoockies(ShopBtn) {
+    let ShopBtnArr = Object.values(ShopBtn);
+    ShopBtnArr.forEach((e) => {
+        e.upgradeValue = atob(getCookie(e.btnName)) 
+        console.log("diupfate");
+    });
+    console.log("ini mas ",ShopBtn);
+    money = parseInt(btoa(getCookie("money")))
+  }
+
+function CreateAllCookie(ShopBtn) {
+    let ShopBtnArr = Object.values(ShopBtn);
+
+    ShopBtnArr.forEach((e) => {
+      setCookie(e.btnName, btoa(e.upgradeValue), 99);
+    });
+    setCookie("money", atob("500"), 99);
+}
+
+if(document.title == "shop"){
+    RefreshAllBtnShop(ShopBtn)
+}
+function RefreshAllBtnShop(ShopBtn) {
+  AplyAllCoockies(ShopBtn)
+  let ShopBtnArr = Object.values(ShopBtn)
+  if(document.title == "Shop"){
+      ShopBtnArr.forEach(e=>{
+          e.btn.innerHTML = e.price[e.upgradeValue]
+          e.labelValue = e.upgradeValue + "/" + e.upgradeMaxValue
+          e.label.innerHTML = e.labelValue
+          if(e.upgradeValue == e.upgradeMaxValue){
+              e.btn.innerHTML = "MAX"
+          }
+          document.getElementById("moneyspan").innerHTML = parseInt(btoa(getCookie("money")))
+      })
+  }
+}
+
+// function SetAllCoockies(ShopBtn) {
+//   // let ShopBtnArr = Object.values(ShopBtn)
+//   // ShopBtnArr.forEach(e=>{
+//   //         e.upgradeValue =atob(getCookie(e.btnName))
+//   // })
+// }
+
+function checkCookies(ShopBtn) {
+  // if(!getCookie("money")){
+  //     setCookie("money","çM",99)
+  // }
+  // let ShopBtnArr = Object.values(ShopBtn)
+  // ShopBtnArr.forEach(e=>{
+  //     if(!getCookie(e.btnName)){
+  //         setCookie(e.btnName,btoa(e.upgradeValue),99)
+  //     }
+  // })
+}
+
+// RefreshAllBtnShop(ShopBtn);
+
+function ts() {
+  // ButtonShopClicked(ShopBtn.playerHp)
+}
+
+function ButtonShopClicked(ShopBtn) {
     if(ShopBtn.upgradeValue <ShopBtn.upgradeMaxValue){
         ShopBtn.upgradeValue++
         ShopBtn.labelValue = ShopBtn.upgradeValue + "/" + ShopBtn.upgradeMaxValue
     }
-
     RefreshBtnShop(ShopBtn)
-}
-function RefreshBtnShop(ShopBtn){
+  }
+  function RefreshBtnShop(ShopBtn) {
     ShopBtn.btn.innerHTML = ShopBtn.price[ShopBtn.upgradeValue]
     ShopBtn.label.innerHTML = ShopBtn.labelValue
     if(ShopBtn.upgradeValue == ShopBtn.upgradeMaxValue){
         ShopBtn.btn.innerHTML = "MAX"
     }
     setCookie(ShopBtn.btnName,btoa(ShopBtn.upgradeValue),9)
-    RefreshAllBtnShop()
-}
-function RefreshAllBtnShop(ShopBtn){
-    SetAllCoockies(ShopBtn)
-    let ShopBtnArr = Object.values(ShopBtn)
-    ShopBtnArr.forEach(e=>{
-        e.btn.innerHTML = e.price[e.upgradeValue]
-        e.labelValue = e.upgradeValue + "/" + e.upgradeMaxValue
-        e.label.innerHTML = e.labelValue
-        if(e.upgradeValue == e.upgradeMaxValue){
-            e.btn.innerHTML = "MAX"
-        }
-
-    })
-    document.getElementById("moneyspan").innerHTML = parseInt(btoa(getCookie("money")))
-}
-
-function SetAllCoockies(ShopBtn){
-    let ShopBtnArr = Object.values(ShopBtn)
-    ShopBtnArr.forEach(e=>{
-            e.upgradeValue =atob(getCookie(e.btnName)) 
-    })
-
-}
-
-function checkCookies(ShopBtn){
-
-    if(!getCookie("money")){
-        setCookie("money","çM",99)
-    }
-    let ShopBtnArr = Object.values(ShopBtn)
-    ShopBtnArr.forEach(e=>{
-        if(!getCookie(e.btnName)){
-            setCookie(e.btnName,btoa(e.upgradeValue),99)
-        }
-    })
-}
-checkCookies(ShopBtn);
-RefreshAllBtnShop(ShopBtn);
-
-function ts(){
-    ButtonShopClicked(ShopBtn.playerHp)
-}
+  }

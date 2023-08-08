@@ -21,6 +21,7 @@
             </div>
                 <div class="startpage">
                     <div class="selectlevel">
+                        <p>Money : <span id="moneyspanhome">999</span></p>
                         <label for="level">Select Level</label>
                         <select name="level" id="levelselector">
                             <option value="1">1</option>
@@ -33,7 +34,7 @@
                     <button id="startbtn" onclick="startingGame()">START</button>
                     <a href="shop.html">
 
-                        <button>SHOP</button>
+                        <button onclick="RefreshAllBtnShop(ShopBtn)">SHOP</button>
                     </a>
                 </div>
             <div class="input-area">
@@ -41,9 +42,9 @@
         </div>
 
         </div>
-    </div>
+    </div> 
     <script src="coockie.js"></script>
+    <script src="playerStats.js"></script>
     <script src="shop.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

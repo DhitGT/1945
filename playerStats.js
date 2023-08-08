@@ -1,5 +1,5 @@
-let money = parseInt(btoa(getCookie("money")))
-let playerWeapon = {
+ let money = parseInt(btoa(getCookie("money")))
+ let playerWeapon = {
     "magMax":{
         "0" : 10,
         "1" : 15,
@@ -23,7 +23,7 @@ let playerWeapon = {
     }
 }
 
-let playerStats = {
+ let playerStats = {
     "speed" : {
         "0" : 5,
         "1" : 6,
@@ -42,7 +42,7 @@ let playerStats = {
 
 
 
-let worldSetting = {
+ let worldSetting = {
     "1" : {
         "name" : "Years 1860",
         "EnemySpawnRate" : 4000,
@@ -79,6 +79,101 @@ let worldSetting = {
         "targetKills" : 7
     }
 }
+
+ ShopBtn = {
+    playerHp: {
+      btnName: "playerHp",
+      btn: document.getElementById("php"),
+      label: document.getElementById("jphp"),
+      labelValue: "0/4",
+      price: {
+        0: 200,
+        1: 500,
+        2: 1000,
+        3: 1500,
+        4: 2500,
+      },
+      upgradeMaxValue: 4,
+      upgradeValue: 0,
+    },
+    playerSpeed: {
+      btnName: "playerSpeed",
+      btn: document.getElementById("speed"),
+      label: document.getElementById("jpspeed"),
+      labelValue: "0/4",
+      price: {
+        0: 200,
+        1: 500,
+        2: 1000,
+        3: 1500,
+        4: 2500,
+      },
+      upgradeMaxValue: 4,
+      upgradeValue: 0,
+    },
+    WpDamage: {
+      btnName: "WpDamage",
+      btn: document.getElementById("wdmg"),
+      label: document.getElementById("jwdmg"),
+      labelValue: "0/4",
+      price: {
+        0: 200,
+        1: 500,
+        2: 1000,
+        3: 1500,
+        4: 2500,
+      },
+      upgradeMaxValue: 4,
+      upgradeValue: 0,
+    },
+    WpRateOfFire: {
+      btnName: "WpRateOfFire",
+      btn: document.getElementById("wrof"),
+      label: document.getElementById("jwrof"),
+      labelValue: "0/4",
+      price: {
+        0: 200,
+        1: 500,
+        2: 1000,
+        3: 1500,
+        4: 2500,
+      },
+      upgradeMaxValue: 4,
+      upgradeValue: 0,
+    },
+    WpMaxMag: {
+      btnName: "WpMaxMag",
+      btn: document.getElementById("wmm"),
+      label: document.getElementById("jwmm"),
+      labelValue: "0/4",
+      price: {
+        0: 200,
+        1: 500,
+        2: 1000,
+        3: 1500,
+        4: 2500,
+      },
+      upgradeMaxValue: 4,
+      upgradeValue: 0,
+    },
+    WpReloadSpeed: {
+      btnName: "WpReloadSpeed",
+      btn: document.getElementById("wrs"),
+      label: document.getElementById("jwrs"),
+      labelValue: "0/4",
+      price: {
+        0: 200,
+        1: 500,
+        2: 1000,
+        3: 1500,
+        4: 2500,
+      },
+      upgradeMaxValue: 4,
+      upgradeValue: 0,
+    },
+  };
+  
+    
 
 let levelIndex = 1;
 GameLevel = worldSetting[levelIndex]

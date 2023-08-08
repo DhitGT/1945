@@ -1,24 +1,14 @@
-const canvas = document.getElementById("canvas");
-const c = canvas.getContext("2d");
-const CW = 800;
-const CH = 400;
-canvas.width = CW;
-canvas.height = CH;
+
 let pause = false;
 let win = false;
 let gameover = false;
 let gloop;
 let spawner;
-function startingGame(){
-    const levelSector = document.getElementById("levelselector")
-    if(!getCookie('levelselected')){
-      setCookie('levelselected',levelSector.value,1)
-    }else{
-      
-    }
-    const newPageURL = "game.html";
-    window.location.href = newPageURL;
 
+AplyAllCoockies(ShopBtn)
+console.log("apaan in ",ShopBtn);
+if(document.title == "game"){
+  startingGame()
 }
 start();
 
@@ -97,6 +87,7 @@ function gameloop() {
 }
 
 function start() {
+
     let thislevel = getCookie('levelselected')
     levelIndex = thislevel
     GameLevel = worldSetting[levelIndex]

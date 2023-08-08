@@ -1,5 +1,5 @@
-const bgImg = new Image();
-const canvasRect = canvas.getBoundingClientRect();
+const bgImg = new Image();  
+
 const msg = document.getElementById("message");
 const msgMag = document.getElementById("magazine");
 const msgHp = document.getElementById("playerhp");
