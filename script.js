@@ -33,7 +33,8 @@ restartBtn.addEventListener("click", () => {
     if (levelIndex < 5) {
       levelIndex++;
       setCookie("levelunlocked", btoa(levelIndex), 99);
-      bgImg.src = worldSetting[levelIndex].worldMap;
+      bgImg.src = worldSetting[levelIndex].worldMap[1];
+      overbgImg.src = worldSetting[levelIndex].worldMap[2];
     }
     setCookie("levelselected", levelIndex, 1);
     GameLevel = worldSetting[levelIndex];
@@ -78,6 +79,7 @@ function draw() {
   objDraw(bullets);
   objDraw(enemys);
   objDraw(coins);
+  drawImage(overbgImg);
   if (gameover || win) {
     c.fillStyle = "#000000a6";
     c.fillRect(0, 0, CW, CH);

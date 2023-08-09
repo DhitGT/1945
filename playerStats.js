@@ -54,7 +54,10 @@ let worldSetting = {
     enemyHp: 5,
     enemySpeed: 4,
     targetKills: 2,
-    worldMap: "bg.png",
+    worldMap: {
+      "1" : "Assets/bg1.png",
+      "2" : "Assets/overbg1.png"
+    },
     isBossLevel: false,
   },
   2: {
@@ -63,7 +66,10 @@ let worldSetting = {
     enemyHp: 6,
     enemySpeed: 4,
     targetKills: 5,
-    worldMap: "bg.png",
+    worldMap: {
+      "1" : "Assets/bg1.png",
+      "2" : "Assets/overbg1.png"
+    },
     isBossLevel: false,
   },
   3: {
@@ -72,7 +78,10 @@ let worldSetting = {
     enemyHp: 7,
     enemySpeed: 4,
     targetKills: 6,
-    worldMap: "bg2.png",
+    worldMap: {
+      "1" : "Assets/bg1.png",
+      "2" : "Assets/overbg1.png"
+    },
     isBossLevel: false,
   },
   4: {
@@ -81,7 +90,10 @@ let worldSetting = {
     enemyHp: 7,
     enemySpeed: 4,
     targetKills: 6,
-    worldMap: "bg2.png",
+    worldMap: {
+      "1" : "Assets/bg1.png",
+      "2" : "Assets/overbg1.png"
+    },
     isBossLevel: false,
   },
   5: {
@@ -90,7 +102,10 @@ let worldSetting = {
     enemyHp: 50,
     enemySpeed: 2,
     targetKills: 1,
-    worldMap: "bg2.png",
+    worldMap: {
+      "1" : "Assets/bg1.png",
+      "2" : "Assets/overbg1.png"
+    },
     isBossLevel: true,
   },
 };

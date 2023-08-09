@@ -1,4 +1,5 @@
 const bgImg = new Image();  
+const overbgImg = new Image();  
 
 const msg = document.getElementById("message");
 const msgMag = document.getElementById("magazine");
@@ -7,7 +8,8 @@ const msgLvl = document.getElementById("msglevel");
 const msgTarget = document.getElementById("msgtargetkills");
 const restartBtn = document.getElementById("restartbtn")
 let canvasMsgTxt = ''
-bgImg.src = worldSetting[levelIndex].worldMap;
+bgImg.src = worldSetting[levelIndex].worldMap[1];
+overbgImg.src = worldSetting[levelIndex].worldMap[2];
 let bullets = [];
 let enemys = [];
 let coins = [];
