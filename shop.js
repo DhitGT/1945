@@ -34,6 +34,7 @@ function AplyAllCoockies(ShopBtn) {
     console.log("ini mas ",ShopBtn);
     money = parseInt(btoa(getCookie("money")))
   }
+  SetLevelSelector()
 
 function CreateAllCookie(ShopBtn) {
     let ShopBtnArr = Object.values(ShopBtn);
@@ -41,6 +42,7 @@ function CreateAllCookie(ShopBtn) {
     ShopBtnArr.forEach((e) => {
       setCookie(e.btnName, btoa(e.upgradeValue), 99);
     });
+    setCookie("levelunlocked", btoa("1"), 99);
     setCookie("money", atob("500"), 99);
 }
 
@@ -107,4 +109,16 @@ function ButtonShopClicked(ShopBtn) {
     }
     setCookie(ShopBtn.btnName,btoa(ShopBtn.upgradeValue),9)
     document.getElementById("moneyspan").innerHTML = parseInt(btoa(getCookie("money")))
+  }
+
+  function SetLevelSelector(){
+    const selector = document.getElementById("levelselector")
+    const LevelUnlocked = atob(getCookie('levelunlocked'))
+    for (let i = 1; i <= LevelUnlocked; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      selector.appendChild(option);
+    }
+
   }

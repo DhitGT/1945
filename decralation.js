@@ -7,7 +7,7 @@ const msgLvl = document.getElementById("msglevel");
 const msgTarget = document.getElementById("msgtargetkills");
 const restartBtn = document.getElementById("restartbtn")
 let canvasMsgTxt = ''
-bgImg.src = "bg.png";
+bgImg.src = worldSetting[levelIndex].worldMap;
 let bullets = [];
 let enemys = [];
 let coins = [];
@@ -84,12 +84,16 @@ function randInt(min, max) {
 }
 
 function enemySpawner() {
-  enemys.push(new Enemy(800, randInt(50, 350), 30, 4, "red"));
+  if(!worldSetting[levelIndex].isBossLevel){
+    enemys.push(new Enemy(800, randInt(70, 300), 30, 4, "red"));
+  }else{
+    enemys = []
+  }
 }
 
 function canvasMsg(c) {
   c.font = "24px Arial";
-  c.fillStyle = "black"; 
+  c.fillStyle = "white"; 
   c.textAlign = "center"; 
   c.textBaseline = "middle"; 
   const x = canvas.width / 2; 

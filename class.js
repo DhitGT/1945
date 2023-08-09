@@ -129,7 +129,7 @@ class Player {
 
   update() {
     if(this.hp >= 1){
-
+      canvasMsgTxt = ""
       coins.forEach(c =>{
         if(isCollide(c,player)){
           money += c.amount
@@ -139,8 +139,17 @@ class Player {
         }
       })
 
+      enemys.forEach(e =>{
+        if(isCollide(player,e)){
+          enemys.splice(e,1)
+          this.gameover()
+          restartBtn.innerHTML = "RESTART"
+        }
+      })
+      
       if(this.kill === this.targetKill){
         this.win()
+        
       }
       msgHp.innerHTML = "Hp : "+this.hp
       if(this.mag <= 1 && !this.isReload){
@@ -154,6 +163,7 @@ class Player {
     }else{
       this.gameover()
       restartBtn.innerHTML = "RESTART"
+      
     }
   }
 
@@ -166,16 +176,16 @@ class Player {
   }
 
   movement() {
-    if (this.u) {
+    if (this.u && this.y > 50) {
       this.y -= this.speed;
     }
-    if (this.d) {
+    if (this.d && this.y < 310) {
       this.y += this.speed;
     }
-    if (this.l) {
+    if (this.l && this.x > 50) {
       this.x -= this.speed;
     }
-    if (this.r) {
+    if (this.r && this.x < 750) {
       this.x += this.speed;
     }
   }
@@ -206,12 +216,14 @@ class Player {
     pause = true
     start()
     msgHp.innerHTML = " GAME OVER"
+    canvasMsgTxt = "GAME OVER"
   }
 
   win(){
     pause = true;
     win = true;
     start();
+    canvasMsgTxt = "LEVEL CLEAR"
     restartBtn.innerHTML = "next level"
   }
 }
@@ -225,6 +237,7 @@ class Bullet {
     this.radius = radius;
     this.speed = speed;
     this.damage = player.damage;
+    this.bullets = []
   }
 
   update() {
@@ -303,7 +316,7 @@ class Coin{
     this.y = y
     this.rad = 5
     this.sz = this.rad
-    this.amount = 500;
+    this.amount = 50;
     this.color = "yellow"
 
   }
