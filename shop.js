@@ -1,4 +1,6 @@
+SetLevelSelector()
 function startingGame(){
+  SetLevelSelector()
   setCookie('levelselected',document.getElementById("levelselector").value,99)
   window.location.href = "game.html";
 }
@@ -34,7 +36,7 @@ function AplyAllCoockies(ShopBtn) {
     console.log("ini mas ",ShopBtn);
     money = parseInt(btoa(getCookie("money")))
   }
-  SetLevelSelector()
+  
 
 function CreateAllCookie(ShopBtn) {
     let ShopBtnArr = Object.values(ShopBtn);
@@ -120,5 +122,5 @@ function ButtonShopClicked(ShopBtn) {
       option.textContent = i;
       selector.appendChild(option);
     }
-
+    console.log("level : ",LevelUnlocked)
   }
