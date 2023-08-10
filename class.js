@@ -278,7 +278,7 @@ class Player {
     if (this.l && this.x > 50) {
       this.x -= this.speed;
     }
-    if (this.r && this.x < 750) {
+    if (this.r && this.x < 730) {
       this.x += this.speed;
     }
   }
@@ -337,7 +337,7 @@ class Bullet {
     this.radius = radius;
     this.speed = speed;
     this.damage = player.damage;
-    this.bullets = [];
+    this.history = []; 
   }
 
   update() {
@@ -349,18 +349,44 @@ class Bullet {
     } else if (this.angle[1]) {
       this.y += this.speed;
     }
-     if (this.angle[2]) {
+    if (this.angle[2]) {
       this.x -= this.speed;
     } else if (this.angle[3]) {
       this.x += this.speed;
     }
+
+    this.history.push({ x: this.x, y: this.y });
+
+
+    if (this.history.length > 4) {
+      this.history.shift(); 
+    }
   }
 
   draw(c) {
-    c.fillStyle = "red";
+    c.fillStyle = "orange";
+
+    for (let i = 0; i < this.history.length; i++) {
+      const position = this.history[i];
+      const trailRadius = this.radius - (i * 0.8); 
+      c.globalAlpha = 0.5 - (i * 0.08);
+      c.beginPath();
+      c.arc(position.x, position.y, trailRadius, 0, Math.PI * 2);
+      c.fill();
+      c.closePath();
+    }
+    c.globalAlpha = 1.0;
+
+
+
+
     c.beginPath();
+    c.fillStyle = "white";
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    c.shadowColor = "rgba(255, 255, 25, 1)"; 
+    c.shadowBlur = 10; 
     c.fill();
+    c.shadowBlur = 0;
     c.closePath();
   }
 }
@@ -371,6 +397,8 @@ class Enemy {
     this.y = y;
     this.s = s;
     this.sz = s;
+    this.tik = 0;
+    this.tik2 = 0;
     this.hp = GameLevel.enemyHp;
     this.color = color;
     this.speed = GameLevel.enemySpeed;

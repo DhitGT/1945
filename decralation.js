@@ -92,7 +92,7 @@ function randInt(min, max) {
 
 function enemySpawner() {
   if(!worldSetting[levelIndex].isBossLevel){
-    enemys.push(new Enemy(800, randInt(70, 300), 30, 4, "red"));
+    enemys.push(new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red"));
   }else{
     enemys = []
   }

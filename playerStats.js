@@ -55,6 +55,7 @@ let worldSetting = {
     enemyHp: 5,
     enemySpeed: 4,
     targetKills: 2,
+    enemySize : 35,
     worldMap: {
       "1" : "Assets/bg1.png",
       "2" : "Assets/overbg1.png"
@@ -68,6 +69,7 @@ let worldSetting = {
     enemyHp: 6,
     enemySpeed: 4,
     targetKills: 5,
+    enemySize : 35,
     worldMap: {
       "1" : "Assets/bg1.png",
       "2" : "Assets/overbg1.png"
@@ -81,6 +83,7 @@ let worldSetting = {
     enemyHp: 7,
     enemySpeed: 4,
     targetKills: 6,
+    enemySize : 35,
     worldMap: {
       "1" : "Assets/bg1.png",
       "2" : "Assets/overbg1.png"
@@ -94,6 +97,7 @@ let worldSetting = {
     enemyHp: 7,
     enemySpeed: 4,
     targetKills: 6,
+    enemySize : 35,
     worldMap: {
       "1" : "Assets/bg1.png",
       "2" : "Assets/overbg1.png"
@@ -107,6 +111,7 @@ let worldSetting = {
     enemyHp: 70,
     enemySpeed: 3,
     targetKills: 1,
+    enemySize : 65,
     worldMap: {
       "1" : "Assets/bg1.png",
       "2" : "Assets/overbg1.png"

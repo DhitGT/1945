@@ -76,7 +76,6 @@ function draw() {
   c.clearRect(0, 0, CW, CH);
   drawImage(bgImg);
   objDraw(bullets);
-  objDraw(enemys);
   objDraw(coins);
   animate()
   drawImage(overbgImg);
@@ -118,11 +117,47 @@ function start() {
 
 
 const playerimg = new Image()
+const enemyimg = new Image()
 playerimg.src = "player.png";
+enemyimg.src = "enemy.png";
+
+function enemyAnimate(){
+  enemys.forEach(e =>{
+    if (e.tik < 5) {
+      e.tik2+=1;
+      if(e.tik2 == 2){
+        e.tik2 = 0;
+        e.tik++
+      }
+      console.log(e.tik);
+    } else {
+      e.tik = 0;
+      e.tik2 = 0;
+    }
+  
+    c.drawImage(
+      enemyimg,
+      //crop
+      0 + player.tik * 320, //post x
+      160*12, //post y
+      320, //width
+      320, //height
+  
+      //draw
+      e.x - (e.s / 2), //x
+      e.y - (e.s / 2), //y
+      e.s * 2, //wd
+      e.s * 2 //hei
+    );
+  })
+}
 
 function animate() {
+  if(enemys.length != 0){
+    enemyAnimate()
+  }
     player.setAnimate();
-    if (player.tik < player.lengthFrame) {
+    if (player.tik <= player.lengthFrame) {
       player.tik2+=1;
       if(player.tik2 == 2){
         player.tik2 = 0;
