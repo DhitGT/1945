@@ -1,15 +1,24 @@
 class Player {
-  constructor(x, y, w, h, speed, color) {
-    this.targetKill = GameLevel.targetKills
+  constructor(x, y, w, h, speed, color,imgsrc) {
+    this.targetKill = GameLevel.targetKills;
     this.kill = 0;
-    this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue]
+    this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue];
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
     this.sz = w;
-    this.Xcenter = this.x
-    this.Ycenter = this.y 
+    this.img = imgsrc;
+    this.tik = 0;
+    this.tik2 = 0;
+    this.cx = 160 * 0; //crop x
+    this.cy = 523 * 0; //crop y
+    this.cw = 32 * 10; //crop width
+    this.ch = 32 * 10; //crop height
+    this.sf = 570; //crop jarak antar frame
+    this.lengthFrame = 5;
+    this.Xcenter = this.x;
+    this.Ycenter = this.y;
     this.color = color;
     this.speed = playerStats.speed[ShopBtn.playerSpeed.upgradeValue];
     this.u = false;
@@ -23,11 +32,14 @@ class Player {
     this.fire = false;
     this.colldown = false;
     this.isReload = false;
+    this.coinCollected = 0;
     this.damage = playerWeapon.WpDamage[ShopBtn.WpDamage.upgradeValue];
-    this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];
+    this.rateOfFire =
+      playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];
     this.mag = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
     this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
-    this.reloadDelay = playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];
+    this.reloadDelay =
+      playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];
     addEventListener("keydown", (event) => {
       const key = event.key.toLowerCase();
       switch (key) {
@@ -73,8 +85,8 @@ class Player {
           this.r = false;
           break;
         case "r":
-          if(!this.isReload){
-            this.reload()
+          if (!this.isReload) {
+            this.reload();
           }
           break;
         case "arrowup":
@@ -89,22 +101,92 @@ class Player {
         case "arrowright":
           this.ar = false;
           break;
-
       }
     });
     addEventListener("mousedown", (event) => {
       if (event.button === 0) {
-        
       }
     });
   }
 
-  refresh(){
-    this.targetKill = GameLevel.targetKills
+  setAnimate() {
+    if (this.d && !this.r && !this.l) {
+      this.cy = 0 * 1;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.d && this.r) {
+      this.cy = 160 * 2;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.r && !this.u) {
+      this.cy = 160 * 4;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.r && this.u) {
+      this.cy = 160 * 6;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.u && !this.l) {
+      this.cy = 160 * 8;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.u && this.l) {
+      this.cy = 160 * 10;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.l && !this.d) {
+      this.cy = 160 * 12;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.l && this.d) {
+      this.cy = 160 * 14;
+      this.cx = 160 * 0;
+      this.lengthFrame = 4;
+    } else if (this.ad && !this.ar && !this.al) {
+      this.cy = 0 * 1;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.ad && this.ar) {
+      this.cy = 160 * 2;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.ar && !this.au) {
+      this.cy = 160 * 4;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.ar && this.au) {
+      this.cy = 160 * 6;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.au && !this.al) {
+      this.cy = 160 * 8;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.au && this.al) {
+      this.cy = 160 * 10;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.al && !this.ad) {
+      this.cy = 160 * 12;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else if (this.al && this.ad) {
+      this.cy = 160 * 14;
+      this.cx = 160 * 14;
+      this.lengthFrame = 4;
+    } else {
+      this.cy = 0;
+      this.cx = 0;
+      this.lengthFrame = 1;
+    }
+  }
+
+  refresh() {
+    this.targetKill = GameLevel.targetKills;
     this.kill = 0;
-    this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue]
-    this.Xcenter = this.x
-    this.Ycenter = this.y 
+    this.hp = playerStats.hp[ShopBtn.playerHp.upgradeValue];
+    this.Xcenter = this.x;
+    this.Ycenter = this.y;
     this.speed = playerStats.speed[ShopBtn.playerSpeed.upgradeValue];
     this.x = 200;
     this.y = 300;
@@ -119,51 +201,62 @@ class Player {
     this.fire = false;
     this.colldown = false;
     this.isReload = false;
+    this.coinCollected = 0;
     this.damage = playerWeapon.WpDamage[ShopBtn.WpDamage.upgradeValue];
-    this.rateOfFire = playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];;
+    this.rateOfFire =
+      playerWeapon.rateOfFire[ShopBtn.WpRateOfFire.upgradeValue];
     this.mag = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
-    this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];;
-    this.reloadDelay = playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];;
+    this.magMax = playerWeapon.magMax[ShopBtn.WpMaxMag.upgradeValue];
+    this.reloadDelay =
+      playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];
   }
 
-
   update() {
-    if(this.hp >= 1){
-      canvasMsgTxt = ""
-      coins.forEach(c =>{
-        if(isCollide(c,player)){
-          money += c.amount
-          console.log(money)
-          coins.splice(c,1)
-          setCookie("money",atob(money),9)
-        }
-      })
+    if(this.ad || this.au || this.al || this.ar){
+      this.u = false;
+      this.l = false;
+      this.d = false;
+      this.r = false;
+    }
+    if (this.hp >= 1) {
+      canvasMsgTxt = "";
+      coins.forEach((c) => {
+        if (isCollide(c, player)) {
+          money += c.amount;
+          this.coinCollected += c.amount;
 
-      enemys.forEach(e =>{
-        if(isCollide(player,e)){
-          enemys.splice(e,1)
-          this.gameover()
-          restartBtn.innerHTML = "RESTART"
+          coins.splice(c, 1);
+          setCookie("money", atob(money), 9);
         }
-      })
-      
-      if(this.kill === this.targetKill){
-        this.win()
-        
+      });
+
+      enemys.forEach((e) => {
+        if (isCollide(player, e)) {
+          enemys.splice(e, 1);
+          this.gameover();
+          restartBtn.innerHTML = "RESTART";
+        }
+      });
+
+      if (this.kill === this.targetKill) {
+        this.win();
       }
-      msgHp.innerHTML = "Hp : "+this.hp
-      if(this.mag <= 1 && !this.isReload){
-        msgMag.innerHTML ="ammo : EMPTY!!! (Press R to Reload)"
-        
-      }else if(this.isReload){
-        msgMag.innerHTML ="ammo : "+ this.magMax+" / reload (" + playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue]/1000 + "s)"
-      }else{
-        msgMag.innerHTML ="ammo : "+ this.magMax+" / " +  this.mag
+      msgHp.innerHTML = "Hp : " + this.hp;
+      if (this.mag <= 1 && !this.isReload) {
+        msgMag.innerHTML = "ammo : EMPTY!!! (Press R to Reload)";
+      } else if (this.isReload) {
+        msgMag.innerHTML =
+          "ammo : " +
+          this.magMax +
+          " / reload (" +
+          playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue] / 1000 +
+          "s)";
+      } else {
+        msgMag.innerHTML = "ammo : " + this.magMax + " / " + this.mag;
       }
-    }else{
-      this.gameover()
-      restartBtn.innerHTML = "RESTART"
-      
+    } else {
+      this.gameover();
+      restartBtn.innerHTML = "RESTART";
     }
   }
 
@@ -190,46 +283,53 @@ class Player {
     }
   }
 
-  reload(){
-    this.isReload = true
-    if(this.isReload){
-      setTimeout(()=>{
-          this.mag = this.magMax
-          this.isReload = false
-        },this.reloadDelay)
+  reload() {
+    this.isReload = true;
+    if (this.isReload) {
+      setTimeout(() => {
+        this.mag = this.magMax;
+        this.isReload = false;
+      }, this.reloadDelay);
     }
-
   }
-
 
   fcolldown() {
     if (!this.colldown) {
       this.colldown = true;
-      setTimeout(()=>{
+      setTimeout(() => {
         this.colldown = false;
-      },this.rateOfFire)
+      }, this.rateOfFire);
     }
   }
 
-  gameover(){
-    gameover = true
-    pause = true
-    start()
-    msgHp.innerHTML = " GAME OVER"
-    canvasMsgTxt = "GAME OVER"
+  gameover() {
+    gameover = true;
+    pause = true;
+    start();
+    msgHp.innerHTML = " GAME OVER";
+    canvasMsgTxt = "GAME OVER";
+    canvasSubMsgTxt = "coin collected : " + this.coinCollected;
   }
 
-  win(){
+  win() {
+    coins.forEach((c) => {
+      money += c.amount;
+      this.coinCollected += c.amount;
+      console.log(this.coinCollected);
+      coins.splice(c, 1);
+      setCookie("money", atob(money), 9);
+    });
     pause = true;
     win = true;
+    canvasMsgTxt = "LEVEL CLEAR";
+    canvasSubMsgTxt = "coin collected : " + this.coinCollected;
     start();
-    canvasMsgTxt = "LEVEL CLEAR"
-    restartBtn.innerHTML = "next level"
+    restartBtn.innerHTML = "next level";
   }
 }
 
 class Bullet {
-  constructor(x, y, radius, speed, angle,player) {
+  constructor(x, y, radius, speed, angle, player) {
     this.x = x;
     this.y = y;
     this.sz = radius;
@@ -237,24 +337,21 @@ class Bullet {
     this.radius = radius;
     this.speed = speed;
     this.damage = player.damage;
-    this.bullets = []
+    this.bullets = [];
   }
 
   update() {
-    if(this.speed < (this.speed + 3)){
+    if (this.speed < this.speed + 3) {
       this.speed += 0.4;
     }
-    if(this.angle[0]){
+    if (this.angle[0]) {
       this.y -= this.speed;
-    }
-    else if(this.angle[1]){
+    } else if (this.angle[1]) {
       this.y += this.speed;
     }
-
-    if(this.angle[2]){
+     if (this.angle[2]) {
       this.x -= this.speed;
-    }
-    else if(this.angle[3]){
+    } else if (this.angle[3]) {
       this.x += this.speed;
     }
   }
@@ -285,15 +382,16 @@ class Enemy {
     bullets.forEach((b) => {
       enemys.forEach((e) => {
         if (isCollide(b, e)) {
-          this.hp -= b.damage
-          canvasMsgTxt = "Hp "+GameLevel.enemyHp+" / " + this.hp;
-          msg.innerHTML = "Hp "+GameLevel.enemyHp+" / " + this.hp;
+          this.hp -= b.damage;
+          canvasMsgTxt = "Hp " + GameLevel.enemyHp + " / " + this.hp;
+          msg.innerHTML = "Hp " + GameLevel.enemyHp + " / " + this.hp;
           if (this.hp <= 0) {
             msg.innerHTML = " ";
-            canvasMsgTxt = '';
+            canvasMsgTxt = "";
+            canvasSubMsgTxt = "";
             enemys.splice(e, 1);
-            coins.push(new Coin(e.x,e.y))
-            player.kill++
+            coins.push(new Coin(e.x, e.y, worldSetting[levelIndex].coinAmount));
+            player.kill++;
           }
           bullets.splice(b, 1);
         } else {
@@ -310,24 +408,21 @@ class Enemy {
   }
 }
 
-class Coin{
-  constructor(x,y){
-    this.x = x
-    this.y = y
-    this.rad = 5
-    this.sz = this.rad
-    this.amount = 50;
-    this.color = "yellow"
-
+class Coin {
+  constructor(x, y, amount) {
+    this.x = x;
+    this.y = y;
+    this.rad = 5;
+    this.sz = this.rad;
+    this.amount = amount;
+    this.color = "yellow";
   }
 
-
-  draw(c){
+  draw(c) {
     c.fillStyle = this.color;
     c.beginPath();
     c.arc(this.x, this.y, this.rad, 0, Math.PI * 2);
     c.fill();
     c.closePath();
   }
-
 }

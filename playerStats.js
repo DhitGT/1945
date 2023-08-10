@@ -50,6 +50,7 @@ let playerStats = {
 let worldSetting = {
   1: {
     name: "Level 1",
+    coinAmount : 50,
     EnemySpawnRate: 4000,
     enemyHp: 5,
     enemySpeed: 4,
@@ -62,6 +63,7 @@ let worldSetting = {
   },
   2: {
     name: "Level 2",
+    coinAmount : 50,
     EnemySpawnRate: 4000,
     enemyHp: 6,
     enemySpeed: 4,
@@ -74,6 +76,7 @@ let worldSetting = {
   },
   3: {
     name: "Level 3",
+    coinAmount : 50,
     EnemySpawnRate: 3600,
     enemyHp: 7,
     enemySpeed: 4,
@@ -86,6 +89,7 @@ let worldSetting = {
   },
   4: {
     name: "Level 4",
+    coinAmount : 50,
     EnemySpawnRate: 3500,
     enemyHp: 7,
     enemySpeed: 4,
@@ -98,9 +102,10 @@ let worldSetting = {
   },
   5: {
     name: "Level 5",
+    coinAmount : 100,
     EnemySpawnRate: 3400,
-    enemyHp: 50,
-    enemySpeed: 2,
+    enemyHp: 70,
+    enemySpeed: 3,
     targetKills: 1,
     worldMap: {
       "1" : "Assets/bg1.png",

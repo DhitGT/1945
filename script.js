@@ -75,16 +75,17 @@ function update() {
 function draw() {
   c.clearRect(0, 0, CW, CH);
   drawImage(bgImg);
-  player.draw(c);
   objDraw(bullets);
   objDraw(enemys);
   objDraw(coins);
+  animate()
   drawImage(overbgImg);
   if (gameover || win) {
     c.fillStyle = "#000000a6";
     c.fillRect(0, 0, CW, CH);
   }
   canvasMsg(c);
+  canvasSubMsg(c);
 }
 
 function gameloop() {
@@ -101,7 +102,8 @@ function start() {
   console.log(levelIndex);
   if (!pause) {
     console.log(levelIndex);
-    gloop = setInterval(gameloop, 1000 / 30);
+    gloop = setInterval(gameloop, 1000/30);
+
     if (!worldSetting[levelIndex].isBossLevel) {
       spawner = setInterval(enemySpawner, GameLevel.EnemySpawnRate);
     } else {
@@ -112,4 +114,43 @@ function start() {
     clearInterval(gloop);
     clearInterval(spawner);
   }
+}
+
+
+const playerimg = new Image()
+playerimg.src = "player.png";
+
+function animate() {
+    player.setAnimate();
+    if (player.tik < player.lengthFrame) {
+      player.tik2+=1;
+      if(player.tik2 == 2){
+        player.tik2 = 0;
+        player.tik++
+      }
+      console.log(player.tik);
+    } else {
+      player.tik = 0;
+      player.tik2 = 0;
+    }
+    // debug.innerHTML = tik + "  " + player.cx
+  
+  
+    c.drawImage(
+      playerimg,
+      //crop
+      player.cx + player.tik * player.cw, //post x
+      player.cy, //post y
+      player.cw, //width
+      player.ch, //height
+  
+      //draw
+      player.x - 19, //x
+      player.y - 19, //y
+      70, //wd
+      70 //hei
+    );
+
+  
+
 }
