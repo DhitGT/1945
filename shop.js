@@ -1,7 +1,7 @@
 SetLevelSelector()
 function startingGame(){
-  SetLevelSelector()
-  setCookie('levelselected',document.getElementById("levelselector").value,99)
+
+  setCookie('levelselected',btoa(document.getElementById("levelselector").value),99)
   window.location.href = "game.html";
 }
 
@@ -114,13 +114,20 @@ function ButtonShopClicked(ShopBtn) {
   }
 
   function SetLevelSelector(){
-    const selector = document.getElementById("levelselector")
-    const LevelUnlocked = atob(getCookie('levelunlocked'))
-    for (let i = 1; i <= LevelUnlocked; i++) {
-      const option = document.createElement("option");
-      option.value = i;
-      option.textContent = i;
-      selector.appendChild(option);
+    if(document.title == "Game"){
+      const selector = document.getElementById("levelselector")
+      const LevelUnlocked = atob(getCookie('levelunlocked'))
+      for (let i = 1; i <= LevelUnlocked; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        if(i == atob(getCookie("levelselected"))){
+          option.selected = true;
+        }else{
+          option.selected = false;
+        }
+        selector.appendChild(option);
+      }
+      console.log("level : ",LevelUnlocked)
     }
-    console.log("level : ",LevelUnlocked)
   }

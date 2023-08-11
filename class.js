@@ -113,67 +113,67 @@ class Player {
     if (this.d && !this.r && !this.l) {
       this.cy = 0 * 1;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.d && this.r) {
       this.cy = 160 * 2;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.r && !this.u) {
       this.cy = 160 * 4;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.r && this.u) {
       this.cy = 160 * 6;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.u && !this.l) {
       this.cy = 160 * 8;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.u && this.l) {
       this.cy = 160 * 10;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.l && !this.d) {
       this.cy = 160 * 12;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.l && this.d) {
       this.cy = 160 * 14;
       this.cx = 160 * 0;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.ad && !this.ar && !this.al) {
       this.cy = 0 * 1;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.ad && this.ar) {
       this.cy = 160 * 2;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.ar && !this.au) {
       this.cy = 160 * 4;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.ar && this.au) {
       this.cy = 160 * 6;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.au && !this.al) {
       this.cy = 160 * 8;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.au && this.al) {
       this.cy = 160 * 10;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.al && !this.ad) {
       this.cy = 160 * 12;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else if (this.al && this.ad) {
       this.cy = 160 * 14;
       this.cx = 160 * 14;
-      this.lengthFrame = 4;
+      this.lengthFrame = 3;
     } else {
       this.cy = 0;
       this.cx = 0;
@@ -220,19 +220,26 @@ class Player {
     }
     if (this.hp >= 1) {
       canvasMsgTxt = "";
+      canvasSubMsgTxt = "";
       coins.forEach((c) => {
         if (isCollide(c, player)) {
           money += c.amount;
           this.coinCollected += c.amount;
-
-          coins.splice(c, 1);
+          destroyCoins(c)
           setCookie("money", atob(money), 9);
         }
       });
 
+      enemybullets.forEach(e=>{
+        if(isCollide(e,player)){
+          enemybullets.splice(e,1)
+          player.hp--;
+        }
+      })
+
       enemys.forEach((e) => {
         if (isCollide(player, e)) {
-          enemys.splice(e, 1);
+          destroyEnemy(e)
           this.gameover();
           restartBtn.innerHTML = "RESTART";
         }
@@ -272,13 +279,13 @@ class Player {
     if (this.u && this.y > 50) {
       this.y -= this.speed;
     }
-    if (this.d && this.y < 310) {
+    if (this.d && this.y < 290) {
       this.y += this.speed;
     }
     if (this.l && this.x > 50) {
       this.x -= this.speed;
     }
-    if (this.r && this.x < 730) {
+    if (this.r && this.x < 710) {
       this.x += this.speed;
     }
   }
@@ -316,7 +323,7 @@ class Player {
       money += c.amount;
       this.coinCollected += c.amount;
       console.log(this.coinCollected);
-      coins.splice(c, 1);
+      destroyCoins(c)
       setCookie("money", atob(money), 9);
     });
     pause = true;
@@ -328,8 +335,10 @@ class Player {
   }
 }
 
+
+
 class Bullet {
-  constructor(x, y, radius, speed, angle, player) {
+  constructor(x, y, radius, speed, angle, player,color) {
     this.x = x;
     this.y = y;
     this.sz = radius;
@@ -338,6 +347,7 @@ class Bullet {
     this.speed = speed;
     this.damage = player.damage;
     this.history = []; 
+    this.color = color;
   }
 
   update() {
@@ -364,7 +374,7 @@ class Bullet {
   }
 
   draw(c) {
-    c.fillStyle = "orange";
+    c.fillStyle = this.color;
 
     for (let i = 0; i < this.history.length; i++) {
       const position = this.history[i];
@@ -402,6 +412,35 @@ class Enemy {
     this.hp = GameLevel.enemyHp;
     this.color = color;
     this.speed = GameLevel.enemySpeed;
+    this.fire = false;
+    this.colldown = false;
+    this.isReload = false;
+    this.mag = GameLevel.enemyWp.maxmag;
+    this.magMax = GameLevel.enemyWp.maxmag;
+    this.isReloadDelay = GameLevel.enemyWp.reloadspeed;
+    this.rateOfFire = GameLevel.enemyWp.rof;
+    this.batesatas = 85;
+    this.batesbawah = 230;
+    this.dir = 1;
+  }
+
+  reload() {
+    this.isReload = true;
+    if (this.isReload) {
+      setTimeout(() => {
+        this.mag = this.magMax;
+        this.isReload = false;
+      }, this.reloadDelay);
+    }
+  }
+
+  fcolldown() {
+    if (!this.colldown) {
+      this.colldown = true;
+      setTimeout(() => {
+        this.colldown = false;
+      }, this.rateOfFire);
+    }
   }
 
   update() {
@@ -417,7 +456,8 @@ class Enemy {
             msg.innerHTML = " ";
             canvasMsgTxt = "";
             canvasSubMsgTxt = "";
-            enemys.splice(e, 1);
+            destroyEnemy(e)
+
             coins.push(new Coin(e.x, e.y, worldSetting[levelIndex].coinAmount));
             player.kill++;
           }
@@ -428,7 +468,21 @@ class Enemy {
     });
   }
 
-  move() {}
+  move() {
+    if(GameLevel.enemyMove.isMove){
+      if(this.y <= this.batesatas ){
+        this.dir = 1;
+        this.batesatas = randInt(80,200)
+      }else if(this.y >= this.batesbawah ){
+        this.dir = -1;
+        this.batesbawah = randInt(200,250)
+      }
+  
+      this.y += this.dir * (this.speed / 2)
+    }
+    
+
+  }
 
   draw(c) {
     c.fillStyle = this.color;

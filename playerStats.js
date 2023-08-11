@@ -1,4 +1,7 @@
 let money = parseInt(btoa(getCookie("money")));
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 let playerWeapon = {
   magMax: {
     0: 10,
@@ -61,6 +64,19 @@ let worldSetting = {
       "2" : "Assets/overbg1.png"
     },
     isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : false,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
   },
   2: {
     name: "Level 2",
@@ -75,6 +91,19 @@ let worldSetting = {
       "2" : "Assets/overbg1.png"
     },
     isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : false,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
   },
   3: {
     name: "Level 3",
@@ -89,6 +118,19 @@ let worldSetting = {
       "2" : "Assets/overbg1.png"
     },
     isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : false,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
   },
   4: {
     name: "Level 4",
@@ -103,6 +145,19 @@ let worldSetting = {
       "2" : "Assets/overbg1.png"
     },
     isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : false,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 5,
+      "reloadspeed" : 800,
+
+    }
   },
   5: {
     name: "Level 5",
@@ -111,12 +166,160 @@ let worldSetting = {
     enemyHp: 70,
     enemySpeed: 3,
     targetKills: 1,
-    enemySize : 65,
+    enemySize : 45,
     worldMap: {
       "1" : "Assets/bg1.png",
       "2" : "Assets/overbg1.png"
     },
     isBossLevel: true,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(80,200),
+      "batesbawah" : randInt(200,250),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 1000,
+      "maxmag" : 5,
+      "reloadspeed" : 1200,
+
+    }
+  },
+  6: {
+    name: "Level 6",
+    coinAmount : 55,
+    EnemySpawnRate: 3000,
+    enemyHp: 10,
+    enemySpeed: 4,
+    targetKills: 10,
+    enemySize : 35,
+    worldMap: {
+      "1" : "Assets/bg2.png",
+      "2" : "Assets/overbg2.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
+  },
+  7: {
+    name: "Level 7",
+    coinAmount : 60,
+    EnemySpawnRate: 2800,
+    enemyHp: 13,
+    enemySpeed: 4,
+    targetKills: 12,
+    enemySize : 35,
+    worldMap: {
+      "1" : "Assets/bg2.png",
+      "2" : "Assets/overbg2.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
+  },
+  8: {
+    name: "Level 8",
+    coinAmount : 63,
+    EnemySpawnRate: 2700,
+    enemyHp: 13,
+    enemySpeed: 4,
+    targetKills: 14,
+    enemySize : 35,
+    worldMap: {
+      "1" : "Assets/bg2.png",
+      "2" : "Assets/overbg2.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
+  },
+  9: {
+    name: "Level 9",
+    coinAmount : 65,
+    EnemySpawnRate: 2500,
+    enemyHp: 15,
+    enemySpeed: 4,
+    targetKills: 15,
+    enemySize : 35,
+    worldMap: {
+      "1" : "Assets/bg2.png",
+      "2" : "Assets/overbg2.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : false,
+      "rof" : 500,
+      "maxmag" : 0,
+      "reloadspeed" : 800,
+
+    }
+  },
+  10: {
+    name: "Level 10",
+    coinAmount : 100,
+    EnemySpawnRate: 2500,
+    enemyHp: 80,
+    enemySpeed: 3,
+    targetKills: 1,
+    enemySize : 75,
+    worldMap: {
+      "1" : "Assets/bg2.png",
+      "2" : "Assets/overbg2.png"
+    },
+    isBossLevel: true,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 300,
+      "maxmag" : 10,
+      "reloadspeed" : 1000,
+
+    }
   },
 };
 

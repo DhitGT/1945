@@ -30,13 +30,13 @@ restartBtn.addEventListener("click", () => {
     win = false;
     bullets = [];
     enemys = [];
-    if (levelIndex < 5) {
+    if (levelIndex < 11) {
       levelIndex++;
       setCookie("levelunlocked", btoa(levelIndex), 99);
       bgImg.src = worldSetting[levelIndex].worldMap[1];
       overbgImg.src = worldSetting[levelIndex].worldMap[2];
     }
-    setCookie("levelselected", levelIndex, 1);
+    setCookie("levelselected", btoa(levelIndex), 1);
     GameLevel = worldSetting[levelIndex];
     player.refresh();
     restartBtn.innerHTML = " ";
@@ -51,6 +51,7 @@ function handleVisibilityChange() {
   if (document.hidden) {
     pause = true;
     start();
+    window.location.href = "index.html"
   } else {
     pause = false;
     start();
@@ -66,8 +67,14 @@ function update() {
   if (!player.isReload) {
     playerShoot();
   }
+  enemyShoot()
   objDestroy(bullets);
+  objDestroy(enemybullets);
   objUpdate(bullets);
+  enemys.forEach(e=>{
+    e.move()
+  })
+  objUpdate(enemybullets);
   enemyDestroy(enemys);
   objUpdate(enemys);
 }
@@ -76,6 +83,7 @@ function draw() {
   c.clearRect(0, 0, CW, CH);
   drawImage(bgImg);
   objDraw(bullets);
+  objDraw(enemybullets);
   objDraw(coins);
   animate()
   drawImage(overbgImg);
@@ -93,7 +101,7 @@ function gameloop() {
 }
 
 function start() {
-  let thislevel = getCookie("levelselected");
+  let thislevel = atob(getCookie("levelselected"));
   levelIndex = thislevel;
   GameLevel = worldSetting[levelIndex];
   console.log("level" + levelIndex, thislevel);
@@ -113,6 +121,9 @@ function start() {
     clearInterval(gloop);
     clearInterval(spawner);
   }
+  GameLevel = worldSetting[levelIndex];
+  bgImg.src = worldSetting[levelIndex].worldMap[1];
+  overbgImg.src = worldSetting[levelIndex].worldMap[2];
 }
 
 

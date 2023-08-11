@@ -14,6 +14,7 @@ let canvasSubMsgTxt = ''
 bgImg.src = worldSetting[levelIndex].worldMap[1];
 overbgImg.src = worldSetting[levelIndex].worldMap[2];
 let bullets = [];
+let enemybullets = [];
 let enemys = [];
 let coins = [];
 
@@ -54,9 +55,39 @@ function enemyDestroy(arr) {
   });
 }
 
+function enemyShoot(){
+  if(GameLevel.enemyWp.isWp){
+    enemys.forEach(e=>{
+      console.log(e);
+      if (!e.colldown) {
+        if (e.mag >= 1) {
+          e.mag--
+          e.fcolldown();
+          if(e.mag < e.magMax-1){
+            enemybullets.push(
+            new Bullet(e.x + e.s/2, e.y + e.s/2, 4, 8, [
+              false,
+              false,
+              true,
+              false,
+            ],e,"red")
+            );
+            console.log(enemybullets);
+          }
+        }else{
+          e.reload()
+        }
+      }
+    })
+    
+  }
+  
+}
+
 function playerShoot() {
+  enemyShoot()
   if (!player.colldown && player.mag >= 1) {
-  if (player.ad || player.au || player.ar || player.al) {
+    if (player.ad || player.au || player.ar || player.al) {
       player.mag--
       player.fcolldown();
       if(player.mag < player.magMax-1){
@@ -66,7 +97,7 @@ function playerShoot() {
           player.ad,
           player.al,
           player.ar,
-        ],player)
+        ],player,"orange")
         );
       }
     }
@@ -90,9 +121,27 @@ function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function destroyEnemy(remove) {
+  const updatedArr = enemys.filter(e => e !== remove);
+  enemys = updatedArr;
+}
+function destroyCoins(remove) {
+  const updatedArr = coins.filter(e => e !== remove);
+  coins = updatedArr;
+}
+
+
+
 function enemySpawner() {
   if(!worldSetting[levelIndex].isBossLevel){
-    enemys.push(new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red"));
+    if(GameLevel.spawnerValue == 1){
+      enemys.push(new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red"));
+    }else if(GameLevel.spawnerValue == 2){
+      enemys.push(new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red"));
+      setTimeout(() =>{
+        enemys.push(new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red"));
+      },200)
+    }
   }else{
     enemys = []
   }
