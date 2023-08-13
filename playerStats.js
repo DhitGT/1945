@@ -359,6 +359,202 @@ let worldSetting = {
 
     }
   },
+  12: {
+    name: "Level 12",
+    coinAmount : 74,
+    EnemySpawnRate: 2700,
+    enemyHp: 18,
+    enemySpeed: 3,
+    targetKills: 15,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 4,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 4,
+
+    }
+  },
+  13: {
+    name: "Level 13",
+    coinAmount : 77,
+    EnemySpawnRate: 2700,
+    enemyHp: 18,
+    enemySpeed: 3,
+    targetKills: 16,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 4,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 4,
+
+    }
+  },
+  14: {
+    name: "Level 14",
+    coinAmount : 80,
+    EnemySpawnRate: 2700,
+    enemyHp: 19,
+    enemySpeed: 3,
+    targetKills: 16,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 4,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 4,
+
+    }
+  },
+  15: {
+    name: "Level 15",
+    coinAmount : 80,
+    EnemySpawnRate: 2700,
+    enemyHp: 20,
+    enemySpeed: 3,
+    targetKills: 17,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 4,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 4,
+
+    }
+  },
+  16: {
+    name: "Level 16",
+    coinAmount : 84,
+    EnemySpawnRate: 2700,
+    enemyHp: 22,
+    enemySpeed: 3,
+    targetKills: 18,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  17: {
+    name: "Level 17",
+    coinAmount : 87,
+    EnemySpawnRate: 2700,
+    enemyHp: 22,
+    enemySpeed: 3,
+    targetKills: 18,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  18: {
+    name: "Level 18",
+    coinAmount : 90,
+    EnemySpawnRate: 2700,
+    enemyHp: 22,
+    enemySpeed: 3,
+    targetKills: 18,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
   
 };
 
