@@ -1,0 +1,16 @@
+const bgm1 = new Audio()
+const bgm2 = new Audio()
+const picksfx = new Audio()
+const deathsfx = new Audio()
+const failsfx = new Audio()
+const firesfx = new Audio()
+const hitsfx = new Audio()
+const winsfx = new Audio()
+bgm1.src = "../../assets/bgm/bgm1.mp3"
+bgm2.src = "../../assets/bgm/bgm2.wav"
+picksfx.rc = "../../assets/sfx/coinpick.wav"
+deathsfx.src = "../../assets/sfx/enemydeath.wav"
+failsfx.src = "../../assets/sfx/fail.mp3"
+firesfx.src = "../../assets/sfx/fire.mp3"
+hitsfx.src = "../../assets/sfx/hit.wav"
+winsfx.src = "../../assets/sfx/win.mp3"

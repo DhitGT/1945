@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="vieWport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Shop</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+        </div>
+        <div class="main">
+            <div class="text-area" style="color: wheat;">
+                <p id="playerhp"></p>
+                <p id="magazine"></p>
+                <p id="message"></p>
+                <p id="msglevel"></p>
+                <p id="msgtargetkills"></p>
+            </div>
+                <div class="startpage">
+                    <table>
+                        <tr>
+                            <th>Money : <span id="moneyspan"></span></th>
+                            <th>-</th>
+                            <th>-</th>
+                            <th>-</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Players</p>
+                            </td>
+                            <td>
+                                <p>hp <span id="jphp">1/3</span></p>
+                                    <button class="btnshop" id="php" onclick="ButtonShopClicked(ShopBtn.playerHp)"></button>
+                            </td>
+                            <td>
+                                <p>speed <span id="jpspeed" >1/3</span></p>
+                                    <button class="btnshop" id="speed" onclick="ButtonShopClicked(ShopBtn.playerSpeed)">Up 200</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Weapon</p>
+                            </td>
+                            <td>
+                                <p>damage <span id="jwdmg">1/3</span></p>
+                                    <button class="btnshop" id="wdmg" onclick="ButtonShopClicked(ShopBtn.WpDamage)">Up 200</button>
+                            </td>
+                            <td>
+                                <p>rate of fire <span id="jwrof">1/3</span></p>
+                                    <button class="btnshop" id="wrof" onclick="ButtonShopClicked(ShopBtn.WpRateOfFire)">Up 200</button>
+                            </td>
+                            <td>
+                                <p>max mag <span id="jwmm">1/3</span></p>
+                                    <button class="btnshop" id="wmm"onclick="ButtonShopClicked(ShopBtn.WpMaxMag)">Up 200</button>
+                            </td>
+                            <td>
+                                <p>reload speed <span id="jwrs">1/3</span></p>
+                                    <button class="btnshop" id="wrs" onclick="ButtonShopClicked(ShopBtn.WpReloadSpeed)">Up 200</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="input-area">
+                    <a href="../index.html">
+                        <button onclick="">HOME</button>                           
+                    </a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="js/coockie.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/playerStats.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

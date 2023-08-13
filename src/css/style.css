@@ -1,0 +1,122 @@
+/* #010409
+#0D1117
+#181b1e
+#21262D */
+
+body{
+    background-color: #010409;
+    margin: 0;
+    padding: 0;
+    zoom: 120%;
+}
+
+.main{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 2px red solid; */
+}
+
+
+
+.startpage{
+    background-image: url('../../assets/img/bgmenu.png');
+    background-size: cover;
+    margin: auto;
+    border: 2px solid wheat;
+    background-color: aqua;
+    width: 800px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+td{
+    border: 2px solid wheat;
+}
+
+.startpage button, .selectlevel, a{
+    margin:0.5rem auto;
+    width: 50%;
+}
+
+.input-area,.text-area{
+    margin: auto;
+    width: 80%;
+    height: 200px;
+    border: 2px solid wheat;
+    display: flex;
+    justify-content: space-evenly;
+}
+.input-area button{
+    width: 18%;
+}
+
+canvas{
+    margin: auto;
+    border: 2px wheat solid;
+}
+
+@media only screen and (max-width: 767px){
+    body, .container{
+        overflow:hidden ;
+    }
+    /* .main{
+        height: 110vh;
+        transform: translateY(100px);
+    }
+    body{
+        zoom: 70%;
+        font-size: 15px;
+    }
+    .input-area,.text-area{
+        border: 2px solid rgb(0, 238, 255);
+    }
+
+
+    .analog{
+        display: flex;
+        width: 100vh;
+        justify-content: space-between;
+    }
+
+    .move-analog{
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+        position: fixed;
+        left: 10%;
+        top: 70%;
+    }
+    .weapon-analog{
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+        position: fixed;
+        right: 10%;
+        top: 70%;
+    }
+
+
+    
+
+    .analog button{
+        border-radius: 10px;
+        opacity: 0.5;
+        width: 50px;
+        height: 50px;
+    } */
+
+    .blocker{
+        width: 100vh;
+        height: 100vh;
+        background-color: #010409;
+        position: fixed;
+        top: 0;
+        left:0;
+        color: aliceblue;
+    }
+}
