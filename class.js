@@ -211,7 +211,16 @@ class Player {
       playerWeapon.reloadDelay[ShopBtn.WpReloadSpeed.upgradeValue];
   }
 
+  playSfx(){
+    phitsfx.volume = 0.1
+    phitsfx.play()
+    setTimeout(()=>{
+      phitsfx.currentTime = 0
+    },150)
+  }
+
   update() {
+    
     if(this.ad || this.au || this.al || this.ar){
       this.u = false;
       this.l = false;
@@ -224,6 +233,7 @@ class Player {
       coins.forEach((c) => {
         if (isCollide(c, player)) {
           money += c.amount;
+          picksfx.play()
           this.coinCollected += c.amount;
           destroyCoins(c)
           setCookie("money", atob(money), 9);
@@ -242,12 +252,13 @@ class Player {
       enemys.forEach((e) => {
         if (isCollide(player, e)) {
           destroyEnemy(e)
+          this.playSfx()
           this.gameover();
           restartBtn.innerHTML = "RESTART";
         }
       });
-
       if (this.kill === this.targetKill) {
+
         this.win();
       }
       msgHp.innerHTML = "Hp : " + this.hp;
@@ -318,6 +329,7 @@ class Player {
   }
 
   gameover() {
+    failsfx.play()
     gameover = true;
     pause = true;
     start();
@@ -327,6 +339,7 @@ class Player {
   }
 
   win() {
+    winsfx.play()
     coins.forEach((c) => {
       money += c.amount;
       this.coinCollected += c.amount;
@@ -364,6 +377,7 @@ class Bullet {
         if(this.who == "enemy"){
           player.hp--
           this.x = -2
+          player.playSfx()
         }
     }
   }
@@ -470,10 +484,14 @@ class Enemy {
 
   update() {
     this.x -= this.speed;
-
+    if(this.x < 0){
+      player.playSfx()
+    }
     bullets.forEach((b) => {
       enemys.forEach((e) => {
         if (isCollide(b, e)) {
+          hitsfx.volume = 0.1
+          hitsfx.play()
           this.hp -= b.damage;
           canvasMsgTxt = "Hp " + GameLevel.enemyHp + " / " + this.hp;
           msg.innerHTML = "Hp " + GameLevel.enemyHp + " / " + this.hp;
@@ -482,15 +500,17 @@ class Enemy {
             canvasMsgTxt = "";
             canvasSubMsgTxt = "";
             destroyEnemy(e)
-
+            
             coins.push(new Coin(e.x, e.y, worldSetting[levelIndex].coinAmount));
             player.kill++;
           }
+          hitsfx.currentTime = 0
           bullets.splice(b, 1);
         } else {
         }
       });
     });
+
   }
 
   move() {

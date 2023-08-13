@@ -65,6 +65,7 @@ function enemyShoot() {
         e.fcolldown();
         e.mag--;
         if (e.mag < e.magMax-1) {
+          firesfx.play()
           e.enemybullets.push(
             new Bullet(
               e.x + e.s / 2,
@@ -77,6 +78,7 @@ function enemyShoot() {
               "enemy"
             )
           );
+          firesfx.currentTime = 0
         }
       } else {
         // e.reload();
@@ -92,6 +94,7 @@ function playerShoot() {
       player.mag--;
       player.fcolldown();
       if (player.mag < player.magMax - 1) {
+        firesfx.play()
         bullets.push(
           new Bullet(
             player.x + player.w / 2,
@@ -104,6 +107,7 @@ function playerShoot() {
             "player"
           )
         );
+        firesfx.currentTime = 0
       }
     }
   }

@@ -119,10 +119,15 @@ function ButtonShopClicked(ShopBtn) {
     if(document.title == "Game"){
       const selector = document.getElementById("levelselector")
       const LevelUnlocked = atob(getCookie('levelunlocked'))
-      for (let i = 1; i <= LevelUnlocked; i++) {
+      for (let i = 1; i <= 50; i++) {
         const option = document.createElement("option");
         option.value = i;
         option.textContent = i;
+        if(i <= LevelUnlocked){
+          option.disabled = false;
+        }else{
+          option.disabled = true;
+        }
         if(i == atob(getCookie("levelselected"))){
           option.selected = true;
         }else{

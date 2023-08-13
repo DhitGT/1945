@@ -331,6 +331,34 @@ let worldSetting = {
 
     }
   },
+  11: {
+    name: "Level 11",
+    coinAmount : 70,
+    EnemySpawnRate: 2700,
+    enemyHp: 17,
+    enemySpeed: 3,
+    targetKills: 15,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 4,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 4,
+
+    }
+  },
   
 };
 

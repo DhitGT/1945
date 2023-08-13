@@ -69,6 +69,7 @@ function update() {
   objDestroy(bullets);
   enemys.forEach((e) => {
     objDestroy(e.enemybullets);
+
     objUpdate(e.enemybullets);
     if (!e.isReload) {
       enemyShoot();
