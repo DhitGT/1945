@@ -24,21 +24,25 @@ firesfx.src = "../../assets/sfx/fire (2).mp3";
 hitsfx.src = "../../assets/sfx/hit.wav";
 phitsfx.src = "../../assets/sfx/hit.wav";
 winsfx.src = "../../assets/sfx/win.mp3";
+
 window.onload = function () {
-    startmusic();
+  startmusic();
 };
 function startmusic() {
-    if (document.title == "Game" || document.title == "Shop") {
-        bgmloby.volume = 0.3
-        // bgmloby.play();
-    } else if (document.title == "War") {
-        bgmloby.pause()
-        if (levelIndex >= 1 && levelIndex <= 10) {
-        bgmdessert.volume = 0.05
-        bgmdessert.play();
-    }else if(levelIndex >= 11 &&levelIndex <= 20){
-        // bgmloby.volume = 0.5
-        // bgmjungle.play();
-    }
-  }
+//   if (document.title == "Game" || document.title == "Shop") {
+//     bgmloby.volume = 0.3;
+//     bgmloby.play();
+//   } else if (document.title == "War") {
+//     bgmloby.pause();
+//     if (levelIndex >= 1 && levelIndex <= 10) {
+//       bgmdessert.volume = 0.05;
+//       bgmdessert.play();
+//     } else if (levelIndex >= 11 && levelIndex <= 20) {
+//       bgmloby.volume = 0.5;
+//       bgmjungle.play();
+//     } else if (levelIndex >= 21) {
+//       bgmloby.volume = 0.2;
+//       bgmroad.play();
+//     }
+//   }
 }

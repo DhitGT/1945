@@ -138,11 +138,18 @@ function destroyCoins(remove) {
 }
 
 function enemySpawner() {
-  if (!worldSetting[levelIndex].isBossLevel) {
+  if (!worldSetting[levelIndex].isBossLevel || worldSetting[levelIndex].isTroops) {
     if (GameLevel.spawnerValue == 1) {
-      enemys.push(
-        new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red")
-      );
+      if(GameLevel.isTroops){
+        enemys.push(
+          new Enemy(800, randInt(70, 300), GameLevel.enemySize/2, 4, "red")
+        )
+      }else{
+        enemys.push(
+          new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red")
+        )
+
+      }
     } else if (GameLevel.spawnerValue == 2) {
       enemys.push(
         new Enemy(800, randInt(70, 300), GameLevel.enemySize, 4, "red")

@@ -64,6 +64,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : false,
@@ -92,6 +93,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : false,
@@ -120,6 +122,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : false,
@@ -148,6 +151,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : false,
@@ -176,6 +180,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: true,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -204,6 +209,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -232,6 +238,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -260,6 +267,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -288,6 +296,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -316,6 +325,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg1.png"
     },
     isBossLevel: true,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -344,6 +354,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -372,6 +383,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -400,6 +412,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -428,6 +441,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -456,6 +470,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -484,6 +499,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -512,6 +528,7 @@ let worldSetting = {
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -531,15 +548,16 @@ let worldSetting = {
     name: "Level 18",
     coinAmount : 90,
     EnemySpawnRate: 2700,
-    enemyHp: 22,
+    enemyHp: 25,
     enemySpeed: 3,
-    targetKills: 18,
+    targetKills: 19,
     enemySize : 35,
     worldMap: {
       "1" : "../assets/img/bg3.png",
       "2" : "../assets/img/overbg3.png"
     },
     isBossLevel: false,
+    isTroops: false,
     spawnerValue : 1,
     enemyMove : {
       "isMove" : true,
@@ -550,6 +568,383 @@ let worldSetting = {
       "isWp" : true,
       "rof" : 200,
       "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  19: {
+    name: "Level 19",
+    coinAmount : 95,
+    EnemySpawnRate: 2700,
+    enemyHp: 28,
+    enemySpeed: 3,
+    targetKills: 20,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  20: {
+    name: "Level 20",
+    coinAmount : 110,
+    EnemySpawnRate: 1500,
+    enemyHp: 200,
+    enemySpeed: 2,
+    targetKills: 1,
+    enemySize : 75,
+    worldMap: {
+      "1" : "../assets/img/bg3.png",
+      "2" : "../assets/img/overbg3.png"
+    },
+    isBossLevel: true,
+    isTroops: true,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  21: {
+    name: "Level 21",
+    coinAmount : 110,
+    EnemySpawnRate: 1900,
+    enemyHp: 30,
+    enemySpeed: 3,
+    targetKills: 20,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  22: {
+    name: "Level 22",
+    coinAmount : 110,
+    EnemySpawnRate: 1900,
+    enemyHp: 32,
+    enemySpeed: 3,
+    targetKills: 21,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  23: {
+    name: "Level 23",
+    coinAmount : 110,
+    EnemySpawnRate: 1900,
+    enemyHp: 33,
+    enemySpeed: 3,
+    targetKills: 21,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  24: {
+    name: "Level 24",
+    coinAmount : 110,
+    EnemySpawnRate: 1900,
+    enemyHp: 34,
+    enemySpeed: 3,
+    targetKills: 22,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  25: {
+    name: "Level 25",
+    coinAmount : 110,
+    EnemySpawnRate: 1900,
+    enemyHp: 35,
+    enemySpeed: 3,
+    targetKills: 22,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  26: {
+    name: "Level 26",
+    coinAmount : 115,
+    EnemySpawnRate: 3500,
+    enemyHp: 37,
+    enemySpeed: 2.5,
+    targetKills: 22,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  27: {
+    name: "Level 27",
+    coinAmount : 115,
+    EnemySpawnRate: 3400,
+    enemyHp: 38,
+    enemySpeed: 2.5,
+    targetKills: 24,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  28: {
+    name: "Level 28",
+    coinAmount : 115,
+    EnemySpawnRate: 3400,
+    enemyHp: 40,
+    enemySpeed: 2.5,
+    targetKills: 25,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  29: {
+    name: "Level 29",
+    coinAmount : 115,
+    EnemySpawnRate: 3400,
+    enemyHp: 40,
+    enemySpeed: 2.5,
+    targetKills: 25,
+    enemySize : 45,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  30: {
+    name: "Level 30",
+    coinAmount : 2000,
+    EnemySpawnRate: 1700,
+    enemyHp: 300,
+    enemySpeed: 2,
+    targetKills: 1,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: true,
+    isTroops: true,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  31: {
+    name: "Level 31",
+    coinAmount : 1100,
+    EnemySpawnRate: 2900,
+    enemyHp: 40,
+    enemySpeed: 2.5,
+    targetKills: 25,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
       "reloadspeed" : 2000,
       "bulletSpeed" : 5,
 

@@ -329,6 +329,7 @@ class Player {
   }
 
   gameover() {
+    coins = []
     failsfx.play()
     gameover = true;
     pause = true;
@@ -341,9 +342,8 @@ class Player {
   win() {
     winsfx.play()
     coins.forEach((c) => {
-      money += c.amount;
-      this.coinCollected += c.amount;
-      console.log(this.coinCollected);
+      money += c.amount /2;
+      this.coinCollected += c.amount/2;
       destroyCoins(c)
       setCookie("money", atob(money), 9);
     });

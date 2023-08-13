@@ -29,7 +29,7 @@ restartBtn.addEventListener("click", () => {
     win = false;
     bullets = [];
     enemys = [];
-    if (levelIndex < 11) {
+    if (levelIndex < 50) {
       levelIndex++;
       setCookie("levelunlocked", btoa(levelIndex), 99);
       bgImg.src = worldSetting[levelIndex].worldMap[1];
@@ -125,10 +125,14 @@ function start() {
     console.log(levelIndex);
     gloop = setInterval(gameloop, 1000 / 30);
 
-    if (!worldSetting[levelIndex].isBossLevel) {
+    if (!worldSetting[levelIndex].isBossLevel ) {
       spawner = setInterval(enemySpawner, GameLevel.EnemySpawnRate);
     } else {
-      clearInterval(spawner);
+      if(!worldSetting[levelIndex].isTroops){
+        clearInterval(spawner);
+      }else{
+        spawner = setInterval(enemySpawner, GameLevel.EnemySpawnRate);
+      }
       enemys.push(new Enemy(800, 200, 100, 2, "red"));
     }
   } else {
