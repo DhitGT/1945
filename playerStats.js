@@ -331,34 +331,7 @@ let worldSetting = {
 
     }
   },
-  11: {
-    name: "Level 11",
-    coinAmount : 70,
-    EnemySpawnRate: 2200,
-    enemyHp: 20,
-    enemySpeed: 3,
-    targetKills: 17,
-    enemySize : 35,
-    worldMap: {
-      "1" : "../assets/img/bg2.png",
-      "2" : "../assets/img/overbg2.png"
-    },
-    isBossLevel: false,
-    spawnerValue : 1,
-    enemyMove : {
-      "isMove" : true,
-      "batesatas" : randInt(0,0),
-      "batesbawah" : randInt(0,0),
-    },
-    enemyWp : {
-      "isWp" : true,
-      "rof" : 2000,
-      "maxmag" : 2,
-      "reloadspeed" : 5000,
-      "bulletSpeed" : 4,
-
-    }
-  },
+  
 };
 
 ShopBtn = {

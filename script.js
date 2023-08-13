@@ -11,7 +11,7 @@ if (document.title == "game") {
 start();
 
 document.getElementById("startbtn").addEventListener("click", () => {
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
 });
 
 restartBtn.addEventListener("click", () => {
@@ -50,7 +50,7 @@ function handleVisibilityChange() {
   if (document.hidden) {
     pause = true;
     start();
-    window.location.href = "../index.html"
+    window.location.href = "index.html";
   } else {
     pause = false;
     start();
@@ -67,14 +67,14 @@ function update() {
     playerShoot();
   }
   objDestroy(bullets);
-  enemys.forEach(e=>{
+  enemys.forEach((e) => {
     objDestroy(e.enemybullets);
     objUpdate(e.enemybullets);
-    if(!e.isReload){
-      enemyShoot()
+    if (!e.isReload) {
+      enemyShoot();
     }
-    e.move()
-  })
+    e.move();
+  });
   objUpdate(bullets);
   enemyDestroy(enemys);
   objUpdate(enemys);
@@ -84,16 +84,26 @@ function draw() {
   c.clearRect(0, 0, CW, CH);
   drawImage(bgImg);
   objDraw(bullets);
-  enemys.forEach(e=>{
+  enemys.forEach((e) => {
     objDraw(e.enemybullets);
-  })
+  });
   objDraw(coins);
-  animate()
+  animate();
+  // enemys.forEach(e=>{
+  //   e.drawLight(c)
+  // })
+  // coins.forEach(e=>{
+  //   e.drawLight(c)
+  // })
+  // bullets.forEach(e=>{
+  //   e.drawLight(c)
+  // })
   drawImage(overbgImg);
   if (gameover || win) {
     c.fillStyle = "#000000a6";
     c.fillRect(0, 0, CW, CH);
   }
+
   canvasMsg(c);
   canvasSubMsg(c);
 }
@@ -112,7 +122,7 @@ function start() {
   console.log(levelIndex);
   if (!pause) {
     console.log(levelIndex);
-    gloop = setInterval(gameloop, 1000/30);
+    gloop = setInterval(gameloop, 1000 / 30);
 
     if (!worldSetting[levelIndex].isBossLevel) {
       spawner = setInterval(enemySpawner, GameLevel.EnemySpawnRate);
@@ -129,75 +139,70 @@ function start() {
   overbgImg.src = worldSetting[levelIndex].worldMap[2];
 }
 
-
-const playerimg = new Image()
-const enemyimg = new Image()
+const playerimg = new Image();
+const enemyimg = new Image();
 playerimg.src = "../assets/img/player.png";
 enemyimg.src = "../assets/img/enemy.png";
 
-function enemyAnimate(){
-  enemys.forEach(e =>{
+function enemyAnimate() {
+  enemys.forEach((e) => {
     if (e.tik < 5) {
-      e.tik2+=1;
-      if(e.tik2 == 2){
+      e.tik2 += 1;
+      if (e.tik2 == 2) {
         e.tik2 = 0;
-        e.tik++
+        e.tik++;
       }
     } else {
       e.tik = 0;
       e.tik2 = 0;
     }
-  
+
     c.drawImage(
       enemyimg,
       //crop
       0 + player.tik * 320, //post x
-      160*12, //post y
+      160 * 12, //post y
       320, //width
       320, //height
-  
+
       //draw
-      e.x - (e.s / 2), //x
-      e.y - (e.s / 2), //y
+      e.x - e.s / 2, //x
+      e.y - e.s / 2, //y
       e.s * 2, //wd
       e.s * 2 //hei
     );
-  })
+  });
 }
 
 function animate() {
-  if(enemys.length != 0){
-    enemyAnimate()
+  if (enemys.length != 0) {
+    enemyAnimate();
   }
-    player.setAnimate();
-    if (player.tik <= player.lengthFrame) {
-      player.tik2+=1;
-      if(player.tik2 == 2){
-        player.tik2 = 0;
-        player.tik++
-      }
-    } else {
-      player.tik = 0;
+  player.setAnimate();
+  if (player.tik <= player.lengthFrame) {
+    player.tik2 += 1;
+    if (player.tik2 == 2) {
       player.tik2 = 0;
+      player.tik++;
     }
-    // debug.innerHTML = tik + "  " + player.cx
-  
-  
-    c.drawImage(
-      playerimg,
-      //crop
-      player.cx + player.tik * player.cw, //post x
-      player.cy, //post y
-      player.cw, //width
-      player.ch, //height
-  
-      //draw
-      player.x - 19, //x
-      player.y - 19, //y
-      70, //wd
-      70 //hei
-    );
+  } else {
+    player.tik = 0;
+    player.tik2 = 0;
+  }
+  // debug.innerHTML = tik + "  " + player.cx
 
-  
+  c.drawImage(
+    playerimg,
+    //crop
+    player.cx + player.tik * player.cw, //post x
+    player.cy, //post y
+    player.cw, //width
+    player.ch, //height
 
+    //draw
+    player.x - 19, //x
+    player.y - 19, //y
+    70, //wd
+    70 //hei
+  );
 }

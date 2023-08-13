@@ -1,11 +1,16 @@
+
 SetLevelSelector()
 function startingGame(){
 
   setCookie('levelselected',btoa(document.getElementById("levelselector").value),99)
-  window.location.href = "./src/game.html";
+  window.location.href = "game.html";
 }
 
+
+
+
 CheckCookies(ShopBtn);
+
 function CheckCookies(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
   ShopBtnArr.forEach((e) => {

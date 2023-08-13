@@ -269,12 +269,18 @@ class Player {
     }
   }
 
+  drawLight(c){
+  }
   draw(c) {
-    c.save();
-    c.translate(this.x + this.w / 2, this.y + this.h / 2);
-    c.fillStyle = this.color;
-    c.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
-    c.restore();
+    
+    c.beginPath();
+    c.fillStyle = "#ffffff04";
+    c.arc(this.x, this.y, this.sz/2, 0, Math.PI * 2);
+    c.shadowColor = "rgba(255, 255, 25, 1)"; 
+    c.shadowBlur = 10; 
+    c.fill();
+    c.shadowBlur = 0;
+    c.closePath();
   }
 
   movement() {
@@ -400,7 +406,7 @@ class Bullet {
     }
     c.globalAlpha = 1.0;
 
-
+    
 
 
     c.beginPath();
@@ -411,6 +417,11 @@ class Bullet {
     c.fill();
     c.shadowBlur = 0;
     c.closePath();
+  }
+  
+  drawLight(c){
+    c.shadowColor = "rgba(255, 255, 25, 1)"; 
+    c.shadowBlur = 10; 
   }
 }
 
@@ -485,10 +496,16 @@ class Enemy {
   move() {
     if(GameLevel.enemyMove.isMove){
       if(this.y <= this.batesatas ){
-        this.dir = 1;
+        this.dir = 0
+        setTimeout(()=>{
+          this.dir = 1;
+        },300)
         this.batesatas = randInt(80,200)
       }else if(this.y >= this.batesbawah ){
-        this.dir = -1;
+        this.dir = 0
+        setTimeout(()=>{
+          this.dir = -1;
+        },300)
         this.batesbawah = randInt(200,250)
       }
   
@@ -496,6 +513,11 @@ class Enemy {
     }
     
 
+  }
+  
+  drawLight(c){
+    c.shadowColor = "rgba(255, 255, 25, 1)"; 
+    c.shadowBlur = 10; 
   }
 
   draw(c) {
@@ -512,6 +534,12 @@ class Coin {
     this.sz = this.rad;
     this.amount = amount;
     this.color = "yellow";
+  }
+
+  
+  drawLight(c){
+    c.shadowColor = "rgba(255, 255, 25, 1)"; 
+    c.shadowBlur = 10; 
   }
 
   draw(c) {
