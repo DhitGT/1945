@@ -73,8 +73,8 @@ let worldSetting = {
     targetKills: 2,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -102,8 +102,8 @@ let worldSetting = {
     targetKills: 5,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -131,8 +131,8 @@ let worldSetting = {
     targetKills: 6,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -160,8 +160,8 @@ let worldSetting = {
     targetKills: 6,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -189,8 +189,8 @@ let worldSetting = {
     targetKills: 1,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: true,
     isTroops: false,
@@ -218,8 +218,8 @@ let worldSetting = {
     targetKills: 10,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -247,8 +247,8 @@ let worldSetting = {
     targetKills: 12,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -276,8 +276,8 @@ let worldSetting = {
     targetKills: 14,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -305,8 +305,8 @@ let worldSetting = {
     targetKills: 15,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -334,8 +334,8 @@ let worldSetting = {
     targetKills: 1,
     enemySize : 75,
     worldMap: {
-      "1" : "1945/assets/img/bg1.png",
-      "2" : "1945/assets/img/overbg1.png"
+      "1" : "../1945/assets/img/bg1.png",
+      "2" : "../1945/assets/img/overbg1.png"
     },
     isBossLevel: true,
     isTroops: false,
@@ -363,8 +363,8 @@ let worldSetting = {
     targetKills: 15,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -392,8 +392,8 @@ let worldSetting = {
     targetKills: 15,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -421,8 +421,8 @@ let worldSetting = {
     targetKills: 16,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -450,8 +450,8 @@ let worldSetting = {
     targetKills: 16,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -479,8 +479,8 @@ let worldSetting = {
     targetKills: 17,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -508,8 +508,8 @@ let worldSetting = {
     targetKills: 18,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -537,8 +537,8 @@ let worldSetting = {
     targetKills: 18,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -566,8 +566,8 @@ let worldSetting = {
     targetKills: 19,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -595,8 +595,8 @@ let worldSetting = {
     targetKills: 20,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -624,8 +624,8 @@ let worldSetting = {
     targetKills: 1,
     enemySize : 75,
     worldMap: {
-      "1" : "1945/assets/img/bg3.png",
-      "2" : "1945/assets/img/overbg3.png"
+      "1" : "../1945/assets/img/bg3.png",
+      "2" : "../1945/assets/img/overbg3.png"
     },
     isBossLevel: true,
     isTroops: true,
@@ -653,8 +653,8 @@ let worldSetting = {
     targetKills: 20,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -682,8 +682,8 @@ let worldSetting = {
     targetKills: 21,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -711,8 +711,8 @@ let worldSetting = {
     targetKills: 21,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -740,8 +740,8 @@ let worldSetting = {
     targetKills: 22,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -769,8 +769,8 @@ let worldSetting = {
     targetKills: 22,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -798,8 +798,8 @@ let worldSetting = {
     targetKills: 22,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -827,8 +827,8 @@ let worldSetting = {
     targetKills: 24,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -856,8 +856,8 @@ let worldSetting = {
     targetKills: 25,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -885,8 +885,8 @@ let worldSetting = {
     targetKills: 25,
     enemySize : 45,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -914,8 +914,8 @@ let worldSetting = {
     targetKills: 1,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: true,
     isTroops: true,
@@ -943,8 +943,8 @@ let worldSetting = {
     targetKills: 25,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -972,8 +972,8 @@ let worldSetting = {
     targetKills: 25,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1001,8 +1001,8 @@ let worldSetting = {
     targetKills: 25,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1030,8 +1030,8 @@ let worldSetting = {
     targetKills: 26,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1059,8 +1059,8 @@ let worldSetting = {
     targetKills: 28,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1088,8 +1088,8 @@ let worldSetting = {
     targetKills: 28,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1117,8 +1117,8 @@ let worldSetting = {
     targetKills: 29,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1146,8 +1146,8 @@ let worldSetting = {
     targetKills: 29,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1175,8 +1175,8 @@ let worldSetting = {
     targetKills: 30,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1204,8 +1204,8 @@ let worldSetting = {
     targetKills: 1,
     enemySize : 40,
     worldMap: {
-      "1" : "1945/assets/img/bg4.png",
-      "2" : "1945/assets/img/overbg4.png"
+      "1" : "../1945/assets/img/bg4.png",
+      "2" : "../1945/assets/img/overbg4.png"
     },
     isBossLevel: true,
     isTroops: true,
@@ -1233,8 +1233,8 @@ let worldSetting = {
     targetKills: 30,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1262,8 +1262,8 @@ let worldSetting = {
     targetKills: 30,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1291,8 +1291,8 @@ let worldSetting = {
     targetKills: 30,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1320,8 +1320,8 @@ let worldSetting = {
     targetKills: 30,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -1349,8 +1349,8 @@ let worldSetting = {
     targetKills: 1,
     enemySize : 35,
     worldMap: {
-      "1" : "1945/assets/img/bg2.png",
-      "2" : "1945/assets/img/overbg2.png"
+      "1" : "../1945/assets/img/bg2.png",
+      "2" : "../1945/assets/img/overbg2.png"
     },
     isBossLevel: true,
     isTroops: true,
