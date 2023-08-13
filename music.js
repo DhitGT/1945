@@ -3,6 +3,8 @@ const bgm2 = new Audio();
 const bgmdessert = new Audio();
 const bgmjungle = new Audio();
 const bgmroad = new Audio();
+const bgmtrain = new Audio();
+const bgmend = new Audio();
 const bgmloby = new Audio();
 const picksfx = new Audio();
 const deathsfx = new Audio();
@@ -13,10 +15,12 @@ const phitsfx = new Audio();
 const winsfx = new Audio();
 bgm1.src = "../../assets/bgm/bgm1.mp3";
 bgm2.src = "../../assets/bgm/bgm2.wav";
-bgmdessert.src = "../../assets/bgm/bgmdessert.mp3";
-bgmjungle.src = "../../assets/bgm/bgmjungle.mp3";
-bgmroad.src = "../../assets/bgm/bgmloby.mp3";
-bgmloby.src = "../../assets/bgm/bgmroad.mp3";
+bgmdessert.src = "../../assets/bgm/flobamora.mp3";
+bgmjungle.src = "../../assets/bgm/apuse.mp3";
+bgmroad.src = "../../assets/bgm/yamko.mp3";
+bgmtrain.src = "../../assets/bgm/kincir.mp3";
+bgmend.src = "../../assets/bgm/lathi.mp3";
+bgmloby.src = "../../assets/bgm/indonesiapusaka.mp3";
 picksfx.src = "../../assets/sfx/coinpick.wav";
 deathsfx.src = "../../assets/sfx/enemydeath.wav";
 failsfx.src = "../../assets/sfx/fail.mp3";
@@ -29,20 +33,21 @@ window.onload = function () {
   startmusic();
 };
 function startmusic() {
-//   if (document.title == "Game" || document.title == "Shop") {
-//     bgmloby.volume = 0.3;
-//     bgmloby.play();
-//   } else if (document.title == "War") {
-//     bgmloby.pause();
-//     if (levelIndex >= 1 && levelIndex <= 10) {
-//       bgmdessert.volume = 0.05;
-//       bgmdessert.play();
-//     } else if (levelIndex >= 11 && levelIndex <= 20) {
-//       bgmloby.volume = 0.5;
-//       bgmjungle.play();
-//     } else if (levelIndex >= 21) {
-//       bgmloby.volume = 0.2;
-//       bgmroad.play();
-//     }
-//   }
+  if (document.title == "Game" || document.title == "Shop") {
+
+    bgmloby.play();
+  } else if (document.title == "War") {
+    bgmloby.pause();
+    if (levelIndex >= 1 && levelIndex <= 10) {
+      bgmdessert.play();
+    } else if (levelIndex >= 11 && levelIndex <= 20) {
+      bgmjungle.play();
+    } else if (levelIndex >= 21 && levelIndex <= 30) {
+      bgmroad.play();
+    } else if (levelIndex >= 31 && levelIndex <= 40) {
+      bgmtrain.play();
+    } else if (levelIndex >= 41 && levelIndex <= 45) {
+        bgmend.play();
+    }
+  }
 }

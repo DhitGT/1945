@@ -29,7 +29,7 @@ restartBtn.addEventListener("click", () => {
     win = false;
     bullets = [];
     enemys = [];
-    if (levelIndex < 50) {
+    if (levelIndex < 45) {
       levelIndex++;
       setCookie("levelunlocked", btoa(levelIndex), 99);
       bgImg.src = worldSetting[levelIndex].worldMap[1];
@@ -58,7 +58,11 @@ function handleVisibilityChange() {
 }
 
 function update() {
-  msgLvl.innerHTML = GameLevel.name;
+  if(levelIndex < 10){
+    msgLvl.innerHTML = "years 190"+levelIndex;
+  }else{
+    msgLvl.innerHTML = "years 19"+levelIndex;
+  }
   msgTarget.innerHTML =
     "Kill Goals : " + player.targetKill + " / " + player.kill;
   player.movement();
@@ -120,7 +124,6 @@ function start() {
   GameLevel = worldSetting[levelIndex];
   console.log("level" + levelIndex, thislevel);
   player.refresh();
-  console.log(levelIndex);
   if (!pause) {
     console.log(levelIndex);
     gloop = setInterval(gameloop, 1000 / 30);

@@ -220,12 +220,13 @@ class Player {
   }
 
   update() {
-    
     if(this.ad || this.au || this.al || this.ar){
-      this.u = false;
-      this.l = false;
-      this.d = false;
-      this.r = false;
+      if(!playerWeapon.ShootAndWalk[ShopBtn.WpShootAndWalk.upgradeValue]){
+        this.u = false;
+        this.l = false;
+        this.d = false;
+        this.r = false;
+      }
     }
     if (this.hp >= 1) {
       canvasMsgTxt = "";

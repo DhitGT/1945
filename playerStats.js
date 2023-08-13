@@ -2,6 +2,7 @@ let money = parseInt(btoa(getCookie("money")));
 function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 let playerWeapon = {
   magMax: {
     0: 10,
@@ -9,6 +10,8 @@ let playerWeapon = {
     2: 20,
     3: 25,
     4: 40,
+    5: 70,
+    6: 100,
   },
   reloadDelay: {
     0: "1500",
@@ -16,6 +19,7 @@ let playerWeapon = {
     2: "1000",
     3: "700",
     4: "300",
+    5: "10",
   },
   rateOfFire: {
     0: "300",
@@ -29,8 +33,15 @@ let playerWeapon = {
     1: "2",
     2: "3",
     3: "4",
-    4: "5",
+    4: "6",
+    5: "8",
+    6: "10",
+    7: "100"
   },
+  ShootAndWalk : {
+    0: false,
+    1: true
+  }
 };
 
 let playerStats = {
@@ -47,6 +58,8 @@ let playerStats = {
     2: 7,
     3: 8,
     4: 10,
+    5: 15,
+    6: 25,
   },
 };
 
@@ -923,15 +936,15 @@ let worldSetting = {
   },
   31: {
     name: "Level 31",
-    coinAmount : 1100,
+    coinAmount : 130,
     EnemySpawnRate: 2900,
     enemyHp: 40,
     enemySpeed: 2.5,
     targetKills: 25,
     enemySize : 35,
     worldMap: {
-      "1" : "../assets/img/bg2.png",
-      "2" : "../assets/img/overbg2.png"
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
     },
     isBossLevel: false,
     isTroops: false,
@@ -950,23 +963,431 @@ let worldSetting = {
 
     }
   },
+  32: {
+    name: "Level 32",
+    coinAmount : 150,
+    EnemySpawnRate: 2900,
+    enemyHp: 42,
+    enemySpeed: 2.5,
+    targetKills: 25,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 5,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  33: {
+    name: "Level 33",
+    coinAmount : 160,
+    EnemySpawnRate: 2900,
+    enemyHp: 45,
+    enemySpeed: 2.5,
+    targetKills: 25,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  34: {
+    name: "Level 34",
+    coinAmount : 170,
+    EnemySpawnRate: 2500,
+    enemyHp: 47,
+    enemySpeed: 2.5,
+    targetKills: 26,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  35: {
+    name: "Level 35",
+    coinAmount : 200,
+    EnemySpawnRate: 2400,
+    enemyHp: 50,
+    enemySpeed: 2.5,
+    targetKills: 28,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  36: {
+    name: "Level 36",
+    coinAmount : 200,
+    EnemySpawnRate: 2400,
+    enemyHp: 50,
+    enemySpeed: 2.5,
+    targetKills: 28,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  37: {
+    name: "Level 37",
+    coinAmount : 210,
+    EnemySpawnRate: 2400,
+    enemyHp: 52,
+    enemySpeed: 2.5,
+    targetKills: 29,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 7,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  38: {
+    name: "Level 38",
+    coinAmount : 220,
+    EnemySpawnRate: 2200,
+    enemyHp: 53,
+    enemySpeed: 2.5,
+    targetKills: 29,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 7,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  39: {
+    name: "Level 39",
+    coinAmount : 250,
+    EnemySpawnRate: 2000,
+    enemyHp: 55,
+    enemySpeed: 2.5,
+    targetKills: 30,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 8,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  40: {
+    name: "Level 40",
+    coinAmount : 1000,
+    EnemySpawnRate: 1300,
+    enemyHp: 500,
+    enemySpeed: 2.5,
+    targetKills: 1,
+    enemySize : 40,
+    worldMap: {
+      "1" : "../assets/img/bg4.png",
+      "2" : "../assets/img/overbg4.png"
+    },
+    isBossLevel: true,
+    isTroops: true,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 8,
+      "reloadspeed" : 2000,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  41: {
+    name: "Level 41",
+    coinAmount : 200,
+    EnemySpawnRate: 1500,
+    enemyHp: 60,
+    enemySpeed: 2.5,
+    targetKills: 30,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 1500,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  42: {
+    name: "Level 42",
+    coinAmount : 220,
+    EnemySpawnRate: 1500,
+    enemyHp: 63,
+    enemySpeed: 2.5,
+    targetKills: 30,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 1500,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  43: {
+    name: "Level 43",
+    coinAmount : 225,
+    EnemySpawnRate: 1500,
+    enemyHp: 64,
+    enemySpeed: 2.5,
+    targetKills: 30,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 6,
+      "reloadspeed" : 1300,
+      "bulletSpeed" : 5,
+
+    }
+  },
+  44: {
+    name: "Level 44",
+    coinAmount : 230,
+    EnemySpawnRate: 1300,
+    enemyHp: 60,
+    enemySpeed: 2,
+    targetKills: 30,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: false,
+    isTroops: false,
+    spawnerValue : 2,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 3,
+      "reloadspeed" : 1000,
+      "bulletSpeed" : 7,
+
+    }
+  },
+  45: {
+    name: "Level 45",
+    coinAmount : 230,
+    EnemySpawnRate: 2100,
+    enemyHp: 1500,
+    enemySpeed: 1,
+    targetKills: 1,
+    enemySize : 35,
+    worldMap: {
+      "1" : "../assets/img/bg2.png",
+      "2" : "../assets/img/overbg2.png"
+    },
+    isBossLevel: true,
+    isTroops: true,
+    spawnerValue : 1,
+    enemyMove : {
+      "isMove" : true,
+      "batesatas" : randInt(0,0),
+      "batesbawah" : randInt(0,0),
+    },
+    enemyWp : {
+      "isWp" : true,
+      "rof" : 200,
+      "maxmag" : 9,
+      "reloadspeed" : 1000,
+      "bulletSpeed" : 7,
+
+    }
+  },
   
 };
+
 
 ShopBtn = {
   playerHp: {
     btnName: "playerHp",
     btn: document.getElementById("php"),
     label: document.getElementById("jphp"),
-    labelValue: "0/4",
+    labelValue: "0/6",
     price: {
       0: 200,
-      1: 500,
-      2: 1000,
-      3: 1500,
-      4: 2500,
+      1: 1000,
+      2: 1700,
+      3: 4000,
+      4: 6000,
+      5: 9000,
     },
-    upgradeMaxValue: 4,
+    upgradeMaxValue: 6,
     upgradeValue: 0,
   },
   playerSpeed: {
@@ -976,10 +1397,9 @@ ShopBtn = {
     labelValue: "0/4",
     price: {
       0: 200,
-      1: 500,
-      2: 1000,
-      3: 1500,
-      4: 2500,
+      1: 1000,
+      2: 2500,
+      3: 5500,
     },
     upgradeMaxValue: 4,
     upgradeValue: 0,
@@ -988,15 +1408,16 @@ ShopBtn = {
     btnName: "WpDamage",
     btn: document.getElementById("wdmg"),
     label: document.getElementById("jwdmg"),
-    labelValue: "0/4",
+    labelValue: "0/6",
     price: {
       0: 200,
-      1: 500,
-      2: 1000,
-      3: 1500,
-      4: 2500,
+      1: 1500,
+      2: 3500,
+      3: 5500,
+      4: 7500,
+      5: 9000,
     },
-    upgradeMaxValue: 4,
+    upgradeMaxValue: 6,
     upgradeValue: 0,
   },
   WpRateOfFire: {
@@ -1006,10 +1427,9 @@ ShopBtn = {
     labelValue: "0/4",
     price: {
       0: 200,
-      1: 500,
-      2: 1000,
-      3: 1500,
-      4: 2500,
+      1: 1500,
+      2: 3500,
+      3: 6500,
     },
     upgradeMaxValue: 4,
     upgradeValue: 0,
@@ -1018,15 +1438,16 @@ ShopBtn = {
     btnName: "WpMaxMag",
     btn: document.getElementById("wmm"),
     label: document.getElementById("jwmm"),
-    labelValue: "0/4",
+    labelValue: "0/6",
     price: {
       0: 200,
-      1: 500,
-      2: 1000,
-      3: 1500,
-      4: 2500,
+      1: 1500,
+      2: 3000,
+      3: 5500,
+      4: 7500,
+      5: 9000,
     },
-    upgradeMaxValue: 4,
+    upgradeMaxValue: 6,
     upgradeValue: 0,
   },
   WpReloadSpeed: {
@@ -1035,18 +1456,32 @@ ShopBtn = {
     "bulletSpeed" : 4,
     btn: document.getElementById("wrs"),
     label: document.getElementById("jwrs"),
-    labelValue: "0/4",
+    labelValue: "0/5",
     price: {
       0: 200,
-      1: 500,
-      2: 1000,
-      3: 1500,
-      4: 2500,
+      1: 1500,
+      2: 4500,
+      3: 7500,
+      4: 9000,
     },
-    upgradeMaxValue: 4,
+    upgradeMaxValue: 5,
+    upgradeValue: 0,
+  },
+  WpShootAndWalk: {
+    btnName: "WpShootAndWalk",
+    btn: document.getElementById("saw"),
+    label: document.getElementById("jsaw"),
+    labelValue: "0/1",
+    price: {
+      0: 9000,
+    },
+    upgradeMaxValue: 1,
     upgradeValue: 0,
   },
 };
+
+
+
 
 let levelIndex = 1;
 GameLevel = worldSetting[levelIndex];
