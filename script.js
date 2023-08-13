@@ -152,8 +152,8 @@ function start() {
 
 const playerimg = new Image();
 const enemyimg = new Image();
-playerimg.src = "../assets/img/player.png";
-enemyimg.src = "../assets/img/enemy.png";
+playerimg.src = "../1945/assets/img/player.png";
+enemyimg.src = "../1945/assets/img/enemy.png";
 
 function enemyAnimate() {
   enemys.forEach((e) => {

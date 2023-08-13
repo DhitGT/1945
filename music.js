@@ -29,6 +29,9 @@ winsfx.src = "../1945/assets/sfx/win.mp3";
 window.onload = function () {
   startmusic();
 };
+bgmloby.onload=()=>{
+  startmusic();
+}
 function startmusic() {
   if (document.title == "Game" || document.title == "Shop") {
 
