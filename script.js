@@ -119,6 +119,9 @@ function gameloop() {
 }
 
 function start() {
+  if(levelIndex == 45){
+      window.location.href = "ending.html"
+  }
   let thislevel = atob(getCookie("levelselected"));
   levelIndex = thislevel;
   GameLevel = worldSetting[levelIndex];

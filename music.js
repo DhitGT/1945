@@ -1,5 +1,4 @@
-const bgm1 = new Audio();
-const bgm2 = new Audio();
+
 const bgmdessert = new Audio();
 const bgmjungle = new Audio();
 const bgmroad = new Audio();
@@ -13,8 +12,6 @@ const firesfx = new Audio();
 const hitsfx = new Audio();
 const phitsfx = new Audio();
 const winsfx = new Audio();
-bgm1.src = "../../assets/bgm/bgm1.mp3";
-bgm2.src = "../../assets/bgm/bgm2.wav";
 bgmdessert.src = "../../assets/bgm/flobamora.mp3";
 bgmjungle.src = "../../assets/bgm/apuse.mp3";
 bgmroad.src = "../../assets/bgm/yamko.mp3";

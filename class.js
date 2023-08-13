@@ -353,6 +353,7 @@ class Player {
     canvasMsgTxt = "LEVEL CLEAR";
     canvasSubMsgTxt = "coin collected : " + this.coinCollected;
     start();
+
     restartBtn.innerHTML = "next level";
   }
 }

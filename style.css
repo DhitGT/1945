@@ -20,6 +20,10 @@ body{
 }
 
 
+#vid{
+    width: 800px;
+    height: 400px;
+}
 
 .startpage{
     background-image: url('../../assets/img/bgmenu.png');
