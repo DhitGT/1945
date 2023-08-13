@@ -26,7 +26,7 @@ body{
 }
 
 .startpage{
-    background-image: url('../1945/assets/img/bgmenu.png');
+    background-image: url('../assets/img/bgmenu.png');
     background-size: cover;
     margin: auto;
     background-color: aqua;
