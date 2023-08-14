@@ -351,6 +351,7 @@ class Player {
     });
     pause = true;
     win = true;
+    gameover = false
     canvasMsgTxt = "LEVEL CLEAR";
     canvasSubMsgTxt = "coin collected : " + this.coinCollected;
     start();
