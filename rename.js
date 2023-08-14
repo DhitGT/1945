@@ -69,3 +69,6 @@ setAnimate() {
     this.lengthFrame = 1;
   }
 }
+
+
+['bgmenu.png','bg1.png','bg2.png','bg3.png','bg4.png','overbg1.png','overbg2.png','overbg3.png','overbg4.png','player.png','enemy.png','amparpisang.mp3','apuse.mp3','flobamorea.mp3','ibupertiwi.mp3','indonesiapusaka.mp3','kerosene.mp3','kincir.mp3','lathi.mp3','yamko.mp3','coinpick.wav','enemydeath.wav','fail.mp3','fire (2).mp3','fire.mp3','hit.wav','win.mp3'];

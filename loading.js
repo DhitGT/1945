@@ -1,13 +1,44 @@
 // loading.js
 
 const loadingBar = document.querySelector('.progress');
-const resources = ['bgmenu.png','bg1.png','bg2.png','bg3.png','bg4.png','overbg1.png','overbg2.png','overbg3.png','overbg4.png','player.png','enemy.png','amparpisang.mp3','apuse.mp3','flobamorea.mp3','ibupertiwi.mp3','indonesiapusaka.mp3','kerosene.mp3','kincir.mp3','lathi.mp3','yamko.mp3','coinpick.wav','enemydeath.wav','fail.mp3','fire (2).mp3','fire.mp3','hit.wav','win.mp3']; // List of resources to preload
+const resources = [
+  { type: 'img', url: 'bgmenu.png' },
+  { type: 'img', url: 'bg1.png' },
+  { type: 'img', url: 'bg2.png' },
+  { type: 'img', url: 'bg3.png' },
+  { type: 'img', url: 'bg4.png' },
+  { type: 'img', url: 'overbg1.png' },
+  { type: 'img', url: 'overbg2.png' },
+  { type: 'img', url: 'overbg3.png' },
+  { type: 'img', url: 'overbg4.png' },
+  { type: 'img', url: 'player.png' },
+  { type: 'img', url: 'enemy.png' },
+  { type: 'bgm', url: 'amparpisang.mp3' },
+  { type: 'bgm', url: 'apuse.mp3' },
+  { type: 'bgm', url: 'flobamorea.mp3' },
+  { type: 'bgm', url: 'ibupertiwi.mp3' },
+  { type: 'bgm', url: 'indonesiapusaka.mp3' },
+  { type: 'bgm', url: 'kerosene.mp3' },
+  { type: 'bgm', url: 'kincir.mp3' },
+  { type: 'bgm', url: 'lathi.mp3' },
+  { type: 'bgm', url: 'yamko.mp3' },
+  { type: 'sfx', url: 'coinpick.wav' },
+  { type: 'sfx', url: 'enemydeath.wav' },
+  { type: 'sfx', url: 'fail.mp3' },
+  { type: 'sfx', url: 'fire (2).mp3' },
+  { type: 'sfx', url: 'fire.mp3' },
+  { type: 'sfx', url: 'hit.wav' },
+  { type: 'sfx', url: 'win.mp3' }
+];
+
 let loadedResources = 0;
 
-function loadResource(url) {
+function loadResource(type, url) {
+  const resourceUrl = `https://www.dheep.site/assets/${type}/${url}`;
+  
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
+    xhr.open('GET', resourceUrl);
     xhr.onload = () => resolve(xhr.responseText);
     xhr.onerror = () => reject(xhr.statusText);
     xhr.send();
@@ -30,9 +61,9 @@ function updateLoadingBar() {
 
 function preloadResources() {
   resources.forEach(resource => {
-    loadResource(resource)
+    loadResource(resource.type, resource.url)
       .then(() => updateLoadingBar())
-      .catch(error => console.error(`Error loading ${resource}: ${error}`));
+      .catch(error => console.error(`Error loading ${resource.url}: ${error}`));
   });
 }
 
