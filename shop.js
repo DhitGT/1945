@@ -11,7 +11,7 @@ function startingGame() {
 CheckCookies(ShopBtn);
 function clearAllCookies() {
   CreateAllCookie(ShopBtn)
-  setCookie('gameversion',atob(GAMEVERSION),99)
+  setCookie('gameversion',GAMEVERSION,99)
 }
 
 
@@ -19,7 +19,7 @@ function clearAllCookies() {
 
 function CheckCookies(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
-  if(getCookie('gameversion') != atob(GAMEVERSION) || !getCookie("gameversion")){
+  if(getCookie('gameversion') != GAMEVERSION || !getCookie("gameversion")){
     clearAllCookies()
   }
   ShopBtnArr.forEach((e) => {
