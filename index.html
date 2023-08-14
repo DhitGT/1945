@@ -76,10 +76,12 @@
             { type: 'sfx', url: 'fire (2).mp3' },
             { type: 'sfx', url: 'fire.mp3' },
             { type: 'sfx', url: 'hit.wav' },
-            { type: 'sfx', url: 'win.mp3' }
+            { type: 'sfx', url: 'win.mp3' },
+            { type: 'vid', url: 'ending.mp4' },
         ];
     
         function allResourcesLoaded() {
+            console.log("run this");
           const allElements = resources.map(url => {
             if (url.endsWith('.png')) {
               const img = new Image();
@@ -89,7 +91,41 @@
               const audio = new Audio();
               audio.src = url;
               return audio;
+            }else if (resource.url.endsWith('.mp4') || resource.url.endsWith('.webm') || resource.url.endsWith('.ogg')) {
+                    const video = document.createElement('video');
+                    video.src = resource.url;
+                    return video;
+                }
+                return null;
+            });
+
+            return allElements.every(element => element.complete);
+        }
+
+        // Wait for the page to load
+        window.onload = function () {
+            if (!allResourcesLoaded()) {
+                // Redirect to loading.html if not all resources are loaded
+                window.location.href = 'loading.html';
+            } else {
+                console.log("all loaded", allResourcesLoaded());
             }
+        };
+    </script>
+    <script src="coockie.js"></script>
+    <script src="music.js"></script>
+    <script src="playerStats.js"></script>
+    <script src="getcanvas.js"></script>
+    <script src="shop.js"></script>
+    <script src="class.js"></script>
+    <script src="decralation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+In this updated code, the allResourcesLoaded() function now includes a case for video resources. It creates video elements for
+
+
+
             return null;
           });
     
