@@ -5,9 +5,9 @@ let gloop;
 let spawner;
 
 AplyAllCoockies(ShopBtn);
-if (document.title == "War") {
-  startingGame();
-}
+// if (document.title == "game") {
+//   startingGame();
+// }
 start();
 
 document.getElementById("startbtn").addEventListener("click", () => {
