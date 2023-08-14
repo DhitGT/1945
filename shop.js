@@ -43,6 +43,7 @@ function CreateAllCookie(ShopBtn) {
     setCookie(e.btnName, btoa(e.upgradeValue), 99);
   });
   setCookie("levelunlocked", btoa("1"), 99);
+  setCookie("levelselected", btoa("1"), 99);
   setCookie("money", atob("500"), 99);
 }
 
@@ -140,6 +141,7 @@ function SetLevelSelector() {
   if (document.title == "Game") {
     const selector = document.getElementById("levelselector");
     const LevelUnlocked = atob(getCookie("levelunlocked"));
+    
     for (let i = 1; i <= 45; i++) {
       const option = document.createElement("option");
       option.value = i;

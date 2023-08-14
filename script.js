@@ -35,7 +35,7 @@ restartBtn.addEventListener("click", () => {
       bgImg.src = worldSetting[levelIndex].worldMap[1];
       overbgImg.src = worldSetting[levelIndex].worldMap[2];
     }
-    setCookie("levelselected", btoa(levelIndex), 1);
+    setCookie("levelselected", btoa(levelIndex), 99);
     GameLevel = worldSetting[levelIndex];
     player.refresh();
     restartBtn.innerHTML = " ";
