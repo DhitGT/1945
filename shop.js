@@ -1,5 +1,5 @@
-SetLevelSelector();
 CheckCookies(ShopBtn);
+SetLevelSelector();
 function startingGame() {
   setCookie(
     "levelselected",
