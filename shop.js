@@ -1,4 +1,5 @@
 SetLevelSelector();
+CheckCookies(ShopBtn);
 function startingGame() {
   setCookie(
     "levelselected",
@@ -8,19 +9,13 @@ function startingGame() {
   window.location.href = "game.html";
 }
 
-CheckCookies(ShopBtn);
-function clearAllCookies() {
-  CreateAllCookie(ShopBtn)
-  setCookie('gameversion',GAMEVERSION,99)
-}
-
-
 
 
 function CheckCookies(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
   if(getCookie('gameversion') != GAMEVERSION || !getCookie("gameversion")){
-    clearAllCookies()
+    CreateAllCookie(ShopBtn)
+    setCookie('gameversion',GAMEVERSION,99)
   }
   ShopBtnArr.forEach((e) => {
     if (getCookie(e.btnName)) {
