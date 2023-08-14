@@ -31,7 +31,6 @@ function AplyAllCoockies(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
   ShopBtnArr.forEach((e) => {
     e.upgradeValue = atob(getCookie(e.btnName));
-    console.log("diupfate");
   });
   money = parseInt(btoa(getCookie("money")));
 }
@@ -59,8 +58,9 @@ function RefreshAllBtnShop(ShopBtn) {
   if (document.title == "Shop") {
     ShopBtnArr.forEach((e) => {
       e.labelValue = e.upgradeValue + "/" + e.upgradeMaxValue;
-      e.btn.innerHTML = e.price[e.upgradeValue] + 50;
+      e.btn.innerHTML ="Up "+ e.price[e.upgradeValue] + 50;
       e.label.innerHTML = e.labelValue;
+      e.btnInfo.innerHTML = "Now : "+ e.btnRel[e.upgradeValue] + "<br>Next : " + e.btnRel[parseInt(e.upgradeValue) + 1];
 
       if (e.upgradeValue == e.upgradeMaxValue) {
         e.btn.innerHTML = "MAX";
@@ -80,6 +80,9 @@ function RefreshAllBtnShop(ShopBtn) {
           e.btn.disabled = false
         }
       }
+      
+
+
       document.getElementById("moneyspan").innerHTML = parseInt(
         btoa(getCookie("money"))
       );
@@ -160,6 +163,5 @@ function SetLevelSelector() {
       }
       selector.appendChild(option);
     }
-    console.log("level : ", LevelUnlocked);
   }
 }

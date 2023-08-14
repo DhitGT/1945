@@ -36,7 +36,7 @@
                         <a href="credits.html" >
                             <button style="width: 100%;">Credit</button>
                         </a>
-                        <a href="howtoplay.html" >
+                        <a href="howto" >
                             <button style="width: 100%;">How To Play</button>
                         </a>
                     </div>
@@ -84,7 +84,6 @@
         ];
     
         function allResourcesLoaded() {
-            console.log("run this");
           const allElements = resources.map(url => {
             if (url.endsWith('.png')) {
               const img = new Image();
@@ -105,13 +104,10 @@
             return allElements.every(element => element.complete);
         }
 
-        // Wait for the page to load
         window.onload = function () {
             if (!allResourcesLoaded()) {
-                // Redirect to loading.html if not all resources are loaded
                 window.location.href = 'loading.html';
             } else {
-                console.log("all loaded", allResourcesLoaded());
             }
         };
     </script>
@@ -125,26 +121,6 @@
     <script src="script.js"></script>
 </body>
 </html>
-In this updated code, the allResourcesLoaded() function now includes a case for video resources. It creates video elements for
-
-
-
-            return null;
-          });
-    
-          return allElements.every(element => element.complete);
-        }
-    
-        // Wait for the page to load
-        window.onload = function() {
-          if (!allResourcesLoaded()) {
-            // Redirect to loading.html if not all resources are loaded
-            window.location.href = 'loading.html';
-          }else{
-            console.log("all loaded",allResourcesLoaded());
-          }
-        };
-      </script>
     <script src="coockie.js"></script>
     <script src="music.js"></script>
     <script src="playerStats.js"></script>

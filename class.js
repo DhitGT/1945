@@ -189,7 +189,7 @@ class Player {
     this.Ycenter = this.y;
     this.speed = playerStats.speed[ShopBtn.playerSpeed.upgradeValue];
     this.x = 200;
-    this.y = 300;
+    this.y = 200;
     this.u = false;
     this.d = false;
     this.r = false;

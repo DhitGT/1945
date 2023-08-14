@@ -22,7 +22,7 @@ function drawImage(img) {
   c.drawImage(img, 0, 0, CW, CH);
 }
 
-const player = new Player(300, 300, 30, 30, 5, "cyan", playeranimimg);
+const player = new Player(200, 200, 30, 30, 5, "cyan", playeranimimg);
 
 function isCollide(rectA, rectB) {
   return (
@@ -60,7 +60,6 @@ function enemyShoot() {
       if(e.mag == 0){
         e.reload()
       }
-      console.log("reload",e.isReload);
       if (!e.colldown && e.mag >= 1 && !e.isReload) {
         e.fcolldown();
         e.mag--;

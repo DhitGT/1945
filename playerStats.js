@@ -1376,6 +1376,8 @@ let worldSetting = {
 ShopBtn = {
   playerHp: {
     btnName: "playerHp",
+    btnRel : playerStats.hp,
+    btnInfo: document.getElementById("iphp"),
     btn: document.getElementById("php"),
     label: document.getElementById("jphp"),
     labelValue: "0/6",
@@ -1392,6 +1394,8 @@ ShopBtn = {
   },
   playerSpeed: {
     btnName: "playerSpeed",
+    btnRel : playerStats.speed,
+    btnInfo: document.getElementById("ipspeed"),
     btn: document.getElementById("speed"),
     label: document.getElementById("jpspeed"),
     labelValue: "0/4",
@@ -1406,6 +1410,8 @@ ShopBtn = {
   },
   WpDamage: {
     btnName: "WpDamage",
+    btnRel : playerWeapon.WpDamage,
+    btnInfo: document.getElementById("iwdmg"),
     btn: document.getElementById("wdmg"),
     label: document.getElementById("jwdmg"),
     labelValue: "0/6",
@@ -1422,6 +1428,8 @@ ShopBtn = {
   },
   WpRateOfFire: {
     btnName: "WpRateOfFire",
+    btnRel : playerWeapon.rateOfFire,
+    btnInfo: document.getElementById("iwrof"),
     btn: document.getElementById("wrof"),
     label: document.getElementById("jwrof"),
     labelValue: "0/4",
@@ -1436,6 +1444,8 @@ ShopBtn = {
   },
   WpMaxMag: {
     btnName: "WpMaxMag",
+    btnRel : playerWeapon.magMax,
+    btnInfo: document.getElementById("iwmm"),
     btn: document.getElementById("wmm"),
     label: document.getElementById("jwmm"),
     labelValue: "0/6",
@@ -1453,6 +1463,8 @@ ShopBtn = {
   WpReloadSpeed: {
     "bulletSpeed" : 4,
     btnName: "WpReloadSpeed",
+    btnRel : playerWeapon.reloadDelay,
+    btnInfo: document.getElementById("iwrs"),
     "bulletSpeed" : 4,
     btn: document.getElementById("wrs"),
     label: document.getElementById("jwrs"),
@@ -1469,6 +1481,8 @@ ShopBtn = {
   },
   WpShootAndWalk: {
     btnName: "WpShootAndWalk",
+    btnRel : playerWeapon.ShootAndWalk,
+    btnInfo: document.getElementById("isaw"),
     btn: document.getElementById("saw"),
     label: document.getElementById("jsaw"),
     labelValue: "0/1",

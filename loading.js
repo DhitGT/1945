@@ -51,7 +51,6 @@ function updateLoadingBar() {
   loadingBar.style.width = `${progress}%`;
 
   if (loadedResources === resources.length) {
-    // All resources are loaded, redirect to index.html only if not already redirected
     window.location.href = 'index.html';
 
   }
@@ -61,7 +60,6 @@ function preloadResources() {
   resources.forEach(resource => {
     loadResource(resource.type, resource.url)
       .then(() => updateLoadingBar())
-      .catch(error => console.error(`Error loading ${resource.url}: ${error}`));
   });
 }
 

@@ -127,10 +127,8 @@ function start() {
   let thislevel = atob(getCookie("levelselected"));
   levelIndex = thislevel;
   GameLevel = worldSetting[levelIndex];
-  console.log("level" + levelIndex, thislevel);
   player.refresh();
   if (!pause) {
-    console.log(levelIndex);
     gloop = setInterval(gameloop, 1000 / 30);
 
     if (!worldSetting[levelIndex].isBossLevel ) {

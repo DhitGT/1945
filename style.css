@@ -41,6 +41,7 @@ body{
 table{
     width: 90%;
     margin: auto;
+    font-size: smaller;
 }
 .container{
     transform: translateY(10%);
@@ -64,6 +65,8 @@ td:hover{
     margin:0.5rem auto;
     width: 50%;
 }
+
+
 
 .selectlevel{
     background-color: wheat;
@@ -115,6 +118,7 @@ button:hover{
 button:active{
     box-shadow: none;
 }
+
 canvas{
     margin: auto;
     border: 2px wheat solid;

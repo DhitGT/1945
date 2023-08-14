@@ -64,7 +64,6 @@
         <h6>Mohon Maaf game ini hanya bisa <p></p>di mainkan di pc / laptop saja</h6>
     </div>
     <script>
-        // List of resource URLs
         const resources = [
             { type: 'img', url: 'bgloby.png' },
             { type: 'img', url: 'bg1.png' },
@@ -97,7 +96,6 @@
         ];
     
         function allResourcesLoaded() {
-            console.log("run this");
           const allElements = resources.map(url => {
             if (url.endsWith('.png')) {
               const img = new Image();
@@ -118,13 +116,10 @@
             return allElements.every(element => element.complete);
         }
 
-        // Wait for the page to load
         window.onload = function () {
             if (!allResourcesLoaded()) {
-                // Redirect to loading.html if not all resources are loaded
                 window.location.href = 'loading.html';
             } else {
-                console.log("all loaded", allResourcesLoaded());
             }
         };
     </script>
