@@ -7,7 +7,7 @@ body{
     background-color: #010409;
     margin: 0;
     padding: 0;
-    zoom: 120%;
+    zoom: 110%;
 }
 
 .main{
@@ -25,6 +25,7 @@ body{
     height: 400px;
 }
 
+
 .startpage{
     background-image: url('../assets/img/bgloby.png');
     background-size: cover;
@@ -37,13 +38,53 @@ body{
     justify-content: center;
 }
 
-td{
-    border: 2px solid wheat;
+table{
+    width: 90%;
+    margin: auto;
 }
+.container{
+    transform: translateY(10%);
+}
+td , .moneyclass{
+    border: 2px solid black;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 5px;
+    background-color: rgb(210, 171, 98);
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+td:hover{
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+    transform: translate(1px,1px);
+}
+
 
 .startpage button, .selectlevel, a{
     margin:0.5rem auto;
     width: 50%;
+}
+
+.selectlevel{
+    background-color: wheat;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.selectlevel select{
+    background-color: rgb(182, 182, 164);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.card{
+    overflow-y: scroll;
+    margin: auto;
+    color: wheat;
+    width: 50%;
+    height: 100rem;
 }
 
 .input-area,.text-area{
@@ -53,11 +94,27 @@ td{
     border: 2px solid wheat;
     display: flex;
     justify-content: space-evenly;
+    border-radius: 5px;
 }
 .input-area button{
     width: 18%;
 }
 
+button{
+    background-color: wheat;
+    padding:0.3rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+button:hover{
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+    transform: translate(1px,1px);
+}
+
+button:active{
+    box-shadow: none;
+}
 canvas{
     margin: auto;
     border: 2px wheat solid;

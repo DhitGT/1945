@@ -120,7 +120,9 @@ function gameloop() {
 
 function start() {
   if(levelIndex == 45 && win){
+    setTimeout(()=>{
       window.location.href = "ending.html"
+    },4000)
   }
   let thislevel = atob(getCookie("levelselected"));
   levelIndex = thislevel;
