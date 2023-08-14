@@ -15,7 +15,7 @@ const resources = [
   { type: 'img', url: 'enemy.png' },
   { type: 'bgm', url: 'amparpisang.mp3' },
   { type: 'bgm', url: 'apuse.mp3' },
-  { type: 'bgm', url: 'flobamorea.mp3' },
+  { type: 'bgm', url: 'flobamora.mp3' },
   { type: 'bgm', url: 'ibupertiwi.mp3' },
   { type: 'bgm', url: 'indonesiapusaka.mp3' },
   { type: 'bgm', url: 'kerosene.mp3' },
