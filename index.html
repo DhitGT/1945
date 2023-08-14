@@ -50,34 +50,34 @@
     <script>
         // List of resource URLs
         const resources = [
-  { type: 'img', url: 'bgmenu.png' },
-  { type: 'img', url: 'bg1.png' },
-  { type: 'img', url: 'bg2.png' },
-  { type: 'img', url: 'bg3.png' },
-  { type: 'img', url: 'bg4.png' },
-  { type: 'img', url: 'overbg1.png' },
-  { type: 'img', url: 'overbg2.png' },
-  { type: 'img', url: 'overbg3.png' },
-  { type: 'img', url: 'overbg4.png' },
-  { type: 'img', url: 'player.png' },
-  { type: 'img', url: 'enemy.png' },
-  { type: 'bgm', url: 'amparpisang.mp3' },
-  { type: 'bgm', url: 'apuse.mp3' },
-  { type: 'bgm', url: 'flobamora.mp3' },
-  { type: 'bgm', url: 'ibupertiwi.mp3' },
-  { type: 'bgm', url: 'indonesiapusaka.mp3' },
-  { type: 'bgm', url: 'kerosene.mp3' },
-  { type: 'bgm', url: 'kincir.mp3' },
-  { type: 'bgm', url: 'lathi.mp3' },
-  { type: 'bgm', url: 'yamko.mp3' },
-  { type: 'sfx', url: 'coinpick.wav' },
-  { type: 'sfx', url: 'enemydeath.wav' },
-  { type: 'sfx', url: 'fail.mp3' },
-  { type: 'sfx', url: 'fire (2).mp3' },
-  { type: 'sfx', url: 'fire.mp3' },
-  { type: 'sfx', url: 'hit.wav' },
-  { type: 'sfx', url: 'win.mp3' }
-];
+            { type: 'img', url: 'bgmenu.png' },
+            { type: 'img', url: 'bg1.png' },
+            { type: 'img', url: 'bg2.png' },
+            { type: 'img', url: 'bg3.png' },
+            { type: 'img', url: 'bg4.png' },
+            { type: 'img', url: 'overbg1.png' },
+            { type: 'img', url: 'overbg2.png' },
+            { type: 'img', url: 'overbg3.png' },
+            { type: 'img', url: 'overbg4.png' },
+            { type: 'img', url: 'player.png' },
+            { type: 'img', url: 'enemy.png' },
+            { type: 'bgm', url: 'amparpisang.mp3' },
+            { type: 'bgm', url: 'apuse.mp3' },
+            { type: 'bgm', url: 'flobamora.mp3' },
+            { type: 'bgm', url: 'ibupertiwi.mp3' },
+            { type: 'bgm', url: 'indonesiapusaka.mp3' },
+            { type: 'bgm', url: 'kerosene.mp3' },
+            { type: 'bgm', url: 'kincir.mp3' },
+            { type: 'bgm', url: 'lathi.mp3' },
+            { type: 'bgm', url: 'yamko.mp3' },
+            { type: 'sfx', url: 'coinpick.wav' },
+            { type: 'sfx', url: 'enemydeath.wav' },
+            { type: 'sfx', url: 'fail.mp3' },
+            { type: 'sfx', url: 'fire (2).mp3' },
+            { type: 'sfx', url: 'fire.mp3' },
+            { type: 'sfx', url: 'hit.wav' },
+            { type: 'sfx', url: 'win.mp3' }
+        ];
     
         function allResourcesLoaded() {
           const allElements = resources.map(url => {
@@ -101,6 +101,8 @@
           if (!allResourcesLoaded()) {
             // Redirect to loading.html if not all resources are loaded
             window.location.href = 'loading.html';
+          }else{
+            console.log("all loaded",allResourcesLoaded());
           }
         };
       </script>
