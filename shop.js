@@ -18,6 +18,9 @@ function clearAllCookies() {
       var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
       document.cookie = name + "=;expires=Thu, 01 Jan 1945 00:00:00 UTC;path=/;";
   }
+  if(!getCookie('gameversion')){
+    setCookie('gameversion',atob(GAMEVERSION),99)
+  }
 }
 
 
@@ -25,12 +28,8 @@ function clearAllCookies() {
 
 function CheckCookies(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
-  if(getCookie('gameversion') != atob(GAMEVERSION)){
+  if(getCookie('gameversion') != atob(GAMEVERSION) || !getCookie("gameversion")){
     clearAllCookies()
-    setCookie('gameversion',atob(GAMEVERSION),99)
-  }else if(!getCookie("gameversion")){
-    clearAllCookies()
-    setCookie('gameversion',atob(GAMEVERSION),99)
   }
   ShopBtnArr.forEach((e) => {
     if (getCookie(e.btnName)) {
