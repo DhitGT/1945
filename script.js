@@ -5,9 +5,9 @@ let gloop;
 let spawner;
 
 AplyAllCoockies(ShopBtn);
-// if (document.title == "game") {
-//   startingGame();
-// }
+if (document.title == "game") {
+  startingGame();
+}
 start();
 
 document.getElementById("startbtn").addEventListener("click", () => {
@@ -119,7 +119,7 @@ function gameloop() {
 }
 
 function start() {
-  if(levelIndex == 45 && player.win){
+  if(levelIndex == 45 && win){
       window.location.href = "ending.html"
   }
   let thislevel = atob(getCookie("levelselected"));

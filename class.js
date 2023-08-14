@@ -334,6 +334,7 @@ class Player {
     failsfx.play()
     gameover = true;
     pause = true;
+    win = false
     start();
     msgHp.innerHTML = " GAME OVER";
     canvasMsgTxt = "GAME OVER";
