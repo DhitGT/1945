@@ -119,7 +119,7 @@ function gameloop() {
 }
 
 function start() {
-  if(levelIndex == 45){
+  if(levelIndex == 45 && player.win){
       window.location.href = "ending.html"
   }
   let thislevel = atob(getCookie("levelselected"));
