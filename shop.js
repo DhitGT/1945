@@ -146,8 +146,10 @@ function SetLevelSelector() {
       const option = document.createElement("option");
       option.value = i;
       option.textContent = i;
-      if (i <= LevelUnlocked) {
+      if (i <= LevelUnlocked && i != 1) {
         option.disabled = false;
+      }else if(i == 1){
+        option.disabled = false
       } else {
         option.disabled = true;
       }
