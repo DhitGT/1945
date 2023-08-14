@@ -10,17 +10,8 @@ function startingGame() {
 
 CheckCookies(ShopBtn);
 function clearAllCookies() {
-  var cookies = document.cookie.split(";");
-
-  for (var i = 0; i < cookies.length; i++) {
-      var cookie = cookies[i];
-      var eqPos = cookie.indexOf("=");
-      var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-      document.cookie = name + "=;expires=Thu, 01 Jan 1945 00:00:00 UTC;path=/;";
-  }
-  if(!getCookie('gameversion')){
-    setCookie('gameversion',atob(GAMEVERSION),99)
-  }
+  CreateAllCookie(ShopBtn)
+  setCookie('gameversion',atob(GAMEVERSION),99)
 }
 
 
@@ -58,6 +49,7 @@ function CreateAllCookie(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
 
   ShopBtnArr.forEach((e) => {
+    e.upgradeValue = 0;
     setCookie(e.btnName, btoa(e.upgradeValue), 99);
   });
   setCookie("levelunlocked", btoa("1"), 99);
