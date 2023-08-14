@@ -52,10 +52,8 @@ function updateLoadingBar() {
 
   if (loadedResources === resources.length) {
     // All resources are loaded, redirect to index.html only if not already redirected
-    if (!sessionStorage.getItem('redirected')) {
-      sessionStorage.setItem('redirected', 'true');
-      window.location.href = 'index.html';
-    }
+    window.location.href = 'index.html';
+
   }
 }
 
