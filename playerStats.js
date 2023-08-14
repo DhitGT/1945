@@ -1481,4 +1481,7 @@ ShopBtn = {
 };
 
 
+
+
+let levelIndex = 1;
 GameLevel = worldSetting[levelIndex];
