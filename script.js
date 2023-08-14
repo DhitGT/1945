@@ -5,7 +5,7 @@ let gloop;
 let spawner;
 
 AplyAllCoockies(ShopBtn);
-if (document.title == "game") {
+if (document.title == "Game") {
   startingGame();
 }
 start();
