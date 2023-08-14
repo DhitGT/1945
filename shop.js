@@ -9,9 +9,29 @@ function startingGame() {
 }
 
 CheckCookies(ShopBtn);
+function clearAllCookies() {
+  var cookies = document.cookie.split(";");
+
+  for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      var eqPos = cookie.indexOf("=");
+      var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = name + "=;expires=Thu, 01 Jan 1945 00:00:00 UTC;path=/;";
+  }
+}
+
+
+
 
 function CheckCookies(ShopBtn) {
   let ShopBtnArr = Object.values(ShopBtn);
+  if(getCookie('gameversion') != atob(GAMEVERSION)){
+    clearAllCookies()
+    setCookie('gameversion',atob(GAMEVERSION),99)
+  }else if(!getCookie("gameversion")){
+    clearAllCookies()
+    setCookie('gameversion',atob(GAMEVERSION),99)
+  }
   ShopBtnArr.forEach((e) => {
     if (getCookie(e.btnName)) {
       AplyAllCoockies(ShopBtn);
@@ -58,7 +78,7 @@ function RefreshAllBtnShop(ShopBtn) {
   if (document.title == "Shop") {
     ShopBtnArr.forEach((e) => {
       e.labelValue = e.upgradeValue + "/" + e.upgradeMaxValue;
-      e.btn.innerHTML ="Up "+ e.price[e.upgradeValue] + 50;
+      e.btn.innerHTML ="Up "+ (parseInt(e.price[e.upgradeValue]) + 50);
       e.label.innerHTML = e.labelValue;
       e.btnInfo.innerHTML = "Now : "+ e.btnRel[e.upgradeValue] + "<br>Next : " + e.btnRel[parseInt(e.upgradeValue) + 1];
 
