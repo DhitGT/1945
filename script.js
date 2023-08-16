@@ -31,7 +31,9 @@ restartBtn.addEventListener("click", () => {
     enemys = [];
     if (levelIndex < 45) {
       levelIndex++;
-      setCookie("levelunlocked", btoa(levelIndex), 99);
+      if(levelIndex > atob(getCookie('levelunlocked'))){
+        setCookie("levelunlocked", btoa(levelIndex), 99);
+      }
       bgImg.src = worldSetting[levelIndex].worldMap[1];
       overbgImg.src = worldSetting[levelIndex].worldMap[2];
     }
