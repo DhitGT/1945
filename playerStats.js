@@ -328,7 +328,7 @@ let worldSetting = {
   },
   10: {
     name: "Level 10",
-    coinAmount : 100,
+    coinAmount : 500,
     EnemySpawnRate: 2500,
     enemyHp: 80,
     enemySpeed: 3,
