@@ -35,19 +35,19 @@ bgmloby.onload=()=>{
 function startmusic() {
   if (document.title == "Game" || document.title == "Shop") {
 
-    bgmloby.play();
+    // bgmloby.play();
   } else if (document.title == "War") {
-    bgmloby.pause();
+    // bgmloby.pause();
     if (levelIndex >= 1 && levelIndex <= 10) {
-      bgmdessert.play();
+      // bgmdessert.play();
     } else if (levelIndex >= 11 && levelIndex <= 20) {
-      bgmjungle.play();
+      // bgmjungle.play();
     } else if (levelIndex >= 21 && levelIndex <= 30) {
-      bgmroad.play();
+      // bgmroad.play();
     } else if (levelIndex >= 31 && levelIndex <= 40) {
-      bgmtrain.play();
+      // bgmtrain.play();
     } else if (levelIndex >= 41 && levelIndex <= 45) {
-        bgmend.play();
+        // bgmend.play();
     }
   }
 }
