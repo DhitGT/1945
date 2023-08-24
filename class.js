@@ -345,9 +345,9 @@ class Player {
     coins.forEach((c) => {
       money += c.amount;
       this.coinCollected += c.amount;
-      destroyCoins(c)
-      setCookie("money", atob(money), 9);
     });
+    setCookie("money", atob(money), 9);
+    coins = []
     pause = true;
     win = true;
     gameover = false
