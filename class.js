@@ -259,7 +259,6 @@ class Player {
         }
       });
       if (this.kill === this.targetKill) {
-
         this.win();
       }
       msgHp.innerHTML = "Hp : " + this.hp;
@@ -344,8 +343,8 @@ class Player {
   win() {
     winsfx.play()
     coins.forEach((c) => {
-      money += c.amount /2;
-      this.coinCollected += c.amount/2;
+      money += c.amount;
+      this.coinCollected += c.amount;
       destroyCoins(c)
       setCookie("money", atob(money), 9);
     });
