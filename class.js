@@ -233,11 +233,13 @@ class Player {
       canvasSubMsgTxt = "";
       coins.forEach((c) => {
         if (isCollide(c, player)) {
-          money += c.amount;
-          picksfx.play()
-          this.coinCollected += c.amount;
-          destroyCoins(c)
-          setCookie("money", atob(money), 9);
+          if(money += c.amount < 9100){
+            money += c.amount;
+            picksfx.play()
+            this.coinCollected += c.amount;
+            destroyCoins(c)
+            setCookie("money", atob(money), 9);
+          }
         }
       });
 
