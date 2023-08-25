@@ -343,8 +343,10 @@ class Player {
   win() {
     winsfx.play()
     coins.forEach((c) => {
-      money += c.amount;
-      this.coinCollected += c.amount;
+      if(money += c.amount < 9500){
+        money += c.amount;
+        this.coinCollected += c.amount;
+      }
     });
     setCookie("money", atob(money), 9);
     coins = []
