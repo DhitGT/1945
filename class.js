@@ -343,7 +343,7 @@ class Player {
   win() {
     winsfx.play()
     coins.forEach((c) => {
-      if(money += c.amount < 9500){
+      if(money += c.amount < 9100){
         money += c.amount;
         this.coinCollected += c.amount;
       }
