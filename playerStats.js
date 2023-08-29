@@ -1143,7 +1143,7 @@ let worldSetting = {
     coinAmount : 220,
     EnemySpawnRate: 2200,
     enemyHp: 53,
-    enemySpeed: 2.5,
+    enemySpeed: 3.5,
     targetKills: 29,
     enemySize : 35,
     worldMap: {
@@ -1172,7 +1172,7 @@ let worldSetting = {
     coinAmount : 250,
     EnemySpawnRate: 2000,
     enemyHp: 55,
-    enemySpeed: 2.5,
+    enemySpeed: 3.5,
     targetKills: 30,
     enemySize : 35,
     worldMap: {
@@ -1201,7 +1201,7 @@ let worldSetting = {
     coinAmount : 1000,
     EnemySpawnRate: 1300,
     enemyHp: 500,
-    enemySpeed: 2.5,
+    enemySpeed: 3.5,
     targetKills: 1,
     enemySize : 40,
     worldMap: {
@@ -1259,7 +1259,7 @@ let worldSetting = {
     coinAmount : 220,
     EnemySpawnRate: 1500,
     enemyHp: 63,
-    enemySpeed: 2.5,
+    enemySpeed: 4.5,
     targetKills: 30,
     enemySize : 35,
     worldMap: {
@@ -1288,7 +1288,7 @@ let worldSetting = {
     coinAmount : 225,
     EnemySpawnRate: 1500,
     enemyHp: 64,
-    enemySpeed: 2.5,
+    enemySpeed: 4.5,
     targetKills: 30,
     enemySize : 35,
     worldMap: {
@@ -1317,7 +1317,7 @@ let worldSetting = {
     coinAmount : 230,
     EnemySpawnRate: 1300,
     enemyHp: 60,
-    enemySpeed: 2,
+    enemySpeed: 3,
     targetKills: 30,
     enemySize : 35,
     worldMap: {
@@ -1346,7 +1346,7 @@ let worldSetting = {
     coinAmount : 230,
     EnemySpawnRate: 2100,
     enemyHp: 1500,
-    enemySpeed: 1,
+    enemySpeed: 2,
     targetKills: 1,
     enemySize : 35,
     worldMap: {
