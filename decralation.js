@@ -1,7 +1,7 @@
 const bgImg = new Image();
 const overbgImg = new Image();
 const playeranimimg = new Image();
-playeranimimg.src = "../assets/img/player.png";
+playeranimimg.src = "assets/img/player.png";
 
 const msg = document.getElementById("message");
 const msgMag = document.getElementById("magazine");
