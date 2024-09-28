@@ -1345,8 +1345,8 @@ let worldSetting = {
     name: "Level 45",
     coinAmount : 230,
     EnemySpawnRate: 2100,
-    enemyHp: 1500,
-    enemySpeed: 2,
+    enemyHp: 1200,
+    enemySpeed: 1.4,
     targetKills: 1,
     enemySize : 35,
     worldMap: {
